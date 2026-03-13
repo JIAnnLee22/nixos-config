@@ -192,6 +192,7 @@ in
     flameshot
     cursor-cli
     claude-code
+    opencode
     stPkg
   ];
   nixpkgs.overlays = [
