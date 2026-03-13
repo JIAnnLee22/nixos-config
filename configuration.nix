@@ -194,8 +194,8 @@
       src = fetchFromGitHub {
         owner = "JIAnnLee22";
         repo = "st";
-        rev = "58258030d0e1418225b5a9fb8cd13ac08eb663fa";  # 例如："v1.0.0" 或 "a1b2c3d..."
-        sha256 = "sha256-NeOIlrj4iL2BoRNVeWx05+Zea/JSmwKcGPLqwuxhXRc=";
+        rev = "ce3fa02a182070bd62b0da82398667d5a365952d";  # 例如："v1.0.0" 或 "a1b2c3d..."
+        sha256 = "sha256-GtIJebINcpVC+W0gy6/KZt9sPGlGnuEzoB7LgzdBqFk=";
       };
     }))
   ];
