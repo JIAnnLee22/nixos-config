@@ -2,11 +2,8 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, st, ... }:
+{ config, lib, pkgs, ... }:
 
-let
-  stPkg = st.packages.${pkgs.system}.default;
-in
 {
   nix.gc = {
     automatic = true;
@@ -193,7 +190,14 @@ in
     cursor-cli
     claude-code
     opencode
-    stPkg
+    (st.overrideAttrs (oldAttrs: rec {
+      src = fetchFromGitHub {
+        owner = "JIAnnLee22";
+        repo = "st";
+        rev = "58258030d0e1418225b5a9fb8cd13ac08eb663fa";  # 例如："v1.0.0" 或 "a1b2c3d..."
+        sha256 = "sha256-NeOIlrj4iL2BoRNVeWx05+Zea/JSmwKcGPLqwuxhXRc=";
+      };
+    }))
   ];
   nixpkgs.overlays = [
     (final: prev: {
