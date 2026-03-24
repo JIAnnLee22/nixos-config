@@ -1,7 +1,7 @@
 {
   description = "NixOS flake for jiannlee22";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-unstable&shallow=1";
   };
 
   outputs = { self, nixpkgs, ... }:

@@ -47,29 +47,37 @@
     fcitx5.addons = with pkgs; [
       qt6Packages.fcitx5-chinese-addons
       fcitx5-gtk
+      fcitx5-pinyin-zhwiki
     ];
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.desktopManager.runXdgAutostartIfNone = true;
-  # services.desktopManager.plasma6.enable = true;
-  # services.displayManager.sddm.enable = true;
-  # services.displayManager.sddm.wayland.enable = true;
+  # programs.mangowc = {
+  #   enable = true;
+  #   package = pkgs.mangowc.override { 
+  #     enableXWayland = true
+  #   }
+  # }
+  # services.displayManager.defaultSession = "none+mangowc";
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
-  services.xserver.windowManager.dwm = {
-    enable = true;
-    package = pkgs.dwm.overrideAttrs {
-      src = pkgs.fetchFromGitHub {
-        owner = "JIAnnLee22";
-        repo = "dwm";
-        rev = "cd24932c249d4eedc6c2605e01ee1461b438d7f2";
-        hash = "sha256-t34+uPYuYjpMXpt/KfBcS4K0mV/1WEXhCeeM8yC37Rw=";
-      };
-      # src = /home/jiannlee22/Project/dwm;
-    };
-  };
-  services.displayManager.defaultSession = "none+dwm";
+  # services.xserver.enable = true;
+  # services.xserver.desktopManager.runXdgAutostartIfNone = true;
+  # services.xserver.windowManager.dwm = {
+  #   enable = true;
+  #   package = pkgs.dwm.overrideAttrs {
+  #     # src = pkgs.fetchFromGitHub {
+  #     #   owner = "JIAnnLee22";
+  #     #   repo = "dwm";
+  #     #   rev = "2bb919e6342ae04242e3af6d5921e550d3e0a619";
+  #     #   hash = "sha256-wHVVU+/tsC9e2bw9d8DHZP8EGRSmqITQrU/0vPweF7I=";
+  #     # };
+  #     src = "/home/jiannlee22/Project/dwm/";
+  #   };
+  # };
+  # services.displayManager.defaultSession = "none+dwm";
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -86,18 +94,6 @@
     pulse.enable = true;
   };
   services.v2raya.enable = true;
-  # services.dae = {
-  #   enable = true;
-  #   configFile = "/home/jiannlee22/.config/dea/config.dae";
-  #   assets = with pkgs; [
-  #     v2ray-geoip
-  #     v2ray-domain-list-community
-  #   ];
-  #   openFirewall = {
-  #     enable = true;
-  #     port = 12345;
-  #   };
-  # };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -178,7 +174,7 @@
     mpv
     picom
     dunst
-    xorg.xrandr
+    xrandr
     qemu_kvm
     pcmanfm
     logseq
@@ -190,6 +186,7 @@
     cursor-cli
     claude-code
     opencode
+    android-tools
     (st.overrideAttrs (oldAttrs: rec {
       src = fetchFromGitHub {
         owner = "JIAnnLee22";
@@ -205,10 +202,10 @@
       jdk17 = prev.javaPackages.compiler.openjdk17;
     })
   ];
-  programs.adb.enable = true;
+  # programs.adb.enable = true;
   programs.java = {
     enable = true;
-    package = pkgs.jdk11;
+    package = pkgs.jdk17;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
