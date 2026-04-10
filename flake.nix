@@ -12,8 +12,11 @@
     nixosConfigurations.ser = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
-        ./configuration.nix
         ./host/ser
+        ./nixos/desktop.nix
+        ./nixos/software.nix
+        ./nixos/services.nix
+        ./nixos/users.nix
       ];
     };
   };
