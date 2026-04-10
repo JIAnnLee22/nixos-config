@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
+
+let
+  mangoEnabled = config.custom.desktopSession == "mango";
+in
 
 {
   nixpkgs.config.allowUnfree = true;
@@ -43,51 +47,61 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    vim
-    neovim
-    htop
-    wget
-    git
-    lazygit
-    javaPackages.compiler.openjdk11
-    javaPackages.compiler.openjdk17
-    freerdp
-    remmina
-    google-chrome
-    v2raya
-    wechat-uos
-    qq
-    feishu
-    android-studio
-    rofi
-    kitty
-    feh
-    mpv
-    picom
-    dunst
-    xrandr
-    qemu_kvm
-    pcmanfm
-    logseq
-    zip
-    unzip
-    unrar
-    obs-studio
-    flameshot
-    cursor-cli
-    claude-code
-    opencode
-    android-tools
-    (st.overrideAttrs (oldAttrs: rec {
-      src = fetchFromGitHub {
-        owner = "JIAnnLee22";
-        repo = "st";
-        rev = "ce3fa02a182070bd62b0da82398667d5a365952d";
-        sha256 = "sha256-GtIJebINcpVC+W0gy6/KZt9sPGlGnuEzoB7LgzdBqFk=";
-      };
-    }))
-  ];
+  environment.systemPackages =
+    (with pkgs; [
+      vim
+      neovim
+      htop
+      wget
+      git
+      lazygit
+      javaPackages.compiler.openjdk11
+      javaPackages.compiler.openjdk17
+      freerdp
+      remmina
+      google-chrome
+      v2raya
+      wechat-uos
+      qq
+      feishu
+      android-studio
+      rofi
+      kitty
+      feh
+      mpv
+      picom
+      dunst
+      xrandr
+      qemu_kvm
+      pcmanfm
+      logseq
+      zip
+      unzip
+      unrar
+      obs-studio
+      flameshot
+      cursor-cli
+      claude-code
+      opencode
+      android-tools
+      (st.overrideAttrs (oldAttrs: rec {
+        src = fetchFromGitHub {
+          owner = "JIAnnLee22";
+          repo = "st";
+          rev = "ce3fa02a182070bd62b0da82398667d5a365952d";
+          sha256 = "sha256-GtIJebINcpVC+W0gy6/KZt9sPGlGnuEzoB7LgzdBqFk=";
+        };
+      }))
+    ])
+    ++ lib.optionals mangoEnabled (with pkgs; [
+      mako
+      fuzzel
+      cliphist
+      wl-clipboard
+      wl-clip-persist
+      swaylock
+      dms
+    ]);
 
   programs.java = {
     enable = true;

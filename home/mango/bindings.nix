@@ -1,0 +1,82 @@
+{ ... }:
+{
+  xdg.configFile."mango/bindings.conf".text = ''
+    # Key Bindings
+    # key name refer to `xev` or `wev` command output,
+    # mod keys name: super,ctrl,alt,shift,none
+    bind=SUPER+SHIFT,r,reload_config
+    bind=SUPER,d,spawn,fuzzel
+    bind=SUPER,Return,spawn,kitty
+    bind=SUPER+SHIFT,q,quit
+    bind=SUPER,q,killclient,
+    bind=SUPER+SHIFT,o,spawn,swaylock
+    bind=SUPER,j,focusstack,next
+    bind=SUPER,k,focusstack,prev
+    bind=SUPER,z,zoom
+    bind=SUPER,h,scroller_stack,left
+    bind=SUPER,l,scroller_stack,right
+    bind=SUPER+SHIFT,j,exchange_stack_client,next
+    bind=SUPER+SHIFT,k,exchange_stack_client,prev
+    bind=ALT,Tab,toggleoverview,
+    bind=SUPER,g,toggleglobal,
+    bind=SUPER,v,togglefloating,
+    bind=SUPER,a,togglemaximizescreen,
+    bind=SUPER,f,togglefullscreen,
+    bind=SUPER+SHIFT,f,togglefakefullscreen,
+    bind=SUPER,i,minimized,
+    bind=SUPER,o,toggleoverlay,
+    bind=SUPER+SHIFT,I,restore_minimized
+    bind=SUPER,s,toggle_scratchpad
+    bind=SUPER,e,set_proportion,1.0
+    bind=SUPER,r,switch_proportion_preset,
+    bind=SUPER,t,setlayout,tile
+    bind=SUPER,s,setlayout,scroller
+    bind=SUPER,m,setlayout,monocle
+    bind=SUPER,c,setlayout,deck
+    bind=SUPER,bracketleft,viewtoleft,0
+    bind=SUPER,bracketright,viewtoright,0
+    bind=SUPER+SHIFT,bracketleft,viewtoleft_have_client,0
+    bind=SUPER+SHIFT,bracketright,viewtoright_have_client,0
+    bind=CTRL+SUPER,bracketleft,tagtoleft,0
+    bind=CTRL+SUPER,bracketright,tagtoright,0
+    bind=SUPER,1,view,1,0
+    bind=SUPER,2,view,2,0
+    bind=SUPER,3,view,3,0
+    bind=SUPER,4,view,4,0
+    bind=SUPER,5,view,5,0
+    bind=SUPER,6,view,6,0
+    bind=SUPER,7,view,7,0
+    bind=SUPER,8,view,8,0
+    bind=SUPER,9,view,9,0
+    bind=SUPER+SHIFT,1,tag,1,0
+    bind=SUPER+SHIFT,2,tag,2,0
+    bind=SUPER+SHIFT,3,tag,3,0
+    bind=SUPER+SHIFT,4,tag,4,0
+    bind=SUPER+SHIFT,5,tag,5,0
+    bind=SUPER+SHIFT,6,tag,6,0
+    bind=SUPER+SHIFT,7,tag,7,0
+    bind=SUPER+SHIFT,8,tag,8,0
+    bind=SUPER+SHIFT,9,tag,9,0
+    bind=SUPER,comma,focusmon,left
+    bind=SUPER,period,focusmon,right
+    bind=SUPER+shift,comma,tagmon,left
+    bind=SUPER+shift,period,tagmon,right
+    bind=SUPER,minus,incgaps,1
+    bind=SUPER,equal,incgaps,-1
+    bind=SUPER+SHIFT,equal,togglegaps
+    bind=SUPER+CTRL,k,movewin,+0,-50
+    bind=SUPER+CTRL,j,movewin,+0,+50
+    bind=SUPER+CTRL,h,movewin,-50,+0
+    bind=SUPER+CTRL,l,movewin,+50,+0
+    bind=SUPER+ALT,k,resizewin,+0,-50
+    bind=SUPER+ALT,j,resizewin,+0,+50
+    bind=SUPER+ALT,h,resizewin,-50,+0
+    bind=SUPER+ALT,l,resizewin,+50,+0
+    mousebind=SUPER,btn_left,moveresize,curmove
+    mousebind=SUPER,btn_right,moveresize,curresize
+    mousebind=NONE,btn_left,toggleoverview,1
+    mousebind=NONE,btn_right,killclient,0
+    axisbind=SUPER,UP,viewtoleft_have_client
+    axisbind=SUPER,DOWN,viewtoright_have_client
+  '';
+}
