@@ -1,7 +1,8 @@
 { ... }:
 {
   xdg.configFile."mango/rule.conf".text = ''
-    monitorrule=name:eDP-1,scale:1.5,width:2880,height:1920,vrr:1
+    monitorrule=name:HDMI-A-1,scale:1,width:1080,height:1920,x:0,y:0,vrr:1,rr:1
+    monitorrule=name:DP-1,scale:1,width:1920,height:1080,x:1080,y:390,vrr:1
     windowrule=isfloating:1,appid:jetbrains-studio
     windowrule=isfloating:1,appid:xdg-desktop-portal-gtk
     windowrule=isfloating:1,appid:pcmanfm

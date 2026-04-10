@@ -12,7 +12,7 @@
     env=QT_AUTO_SCREEN_SCALE_FACTOR,1
     env=QT_WAYLAND_FORCE_DPI,96
     env=QT_QPA_PLATFORM,Wayland;xcb
-    env = DISPLAY,:2
-    exec = xwayland-satellite :2
+    # env = DISPLAY,:2
+    # exec = xwayland-satellite :2
   '';
 }
