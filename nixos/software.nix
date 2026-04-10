@@ -61,7 +61,7 @@ in
       remmina
       google-chrome
       v2raya
-      wechat-uos
+      wechat
       qq
       feishu
       android-studio
