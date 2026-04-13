@@ -94,13 +94,10 @@ in
       }))
     ])
     ++ lib.optionals mangoEnabled (with pkgs; [
-      mako
       fuzzel
       cliphist
       wl-clipboard
       wl-clip-persist
-      swaylock
-      dms
     ]);
 
   programs.java = {

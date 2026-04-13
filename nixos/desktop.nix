@@ -22,10 +22,27 @@ in
       ];
     };
 
-    services.displayManager.sddm.enable = true;
-    services.displayManager.sddm.wayland.enable = true;
+    services.displayManager.enable = (session == "mango");
+    services.displayManager.sddm.enable = (session == "kde");
+    services.displayManager.sddm.wayland.enable = (session == "kde");
 
     services.desktopManager.plasma6.enable = (session == "kde");
     programs.mango.enable = (session == "mango");
+
+    programs.dms-shell = lib.mkIf (session == "mango") {
+      enable = true;
+      systemd = {
+        enable = true;
+        target = "wayland-session.target";
+        restartIfChanged = true;
+      };
+      # Keep explicit defaults for readability and future tuning.
+      enableSystemMonitoring = true;
+      enableVPN = true;
+      enableDynamicTheming = true;
+      enableAudioWavelength = true;
+      enableCalendarEvents = true;
+      enableClipboardPaste = true;
+    };
   };
 }

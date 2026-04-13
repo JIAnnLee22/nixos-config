@@ -1,7 +1,7 @@
 { ... }:
 {
   xdg.configFile."mango/autostart.conf".text = ''
-    # waybar
+    # dms-shell is managed by programs.dms-shell systemd user service
     exec-once=dms run &
     # fcitx5
     exec-once=fcitx5 --replace -d >/dev/null 2>&1 &
@@ -12,6 +12,6 @@
     # Watch clipboard and store history
     exec-once=wl-paste --type text --watch cliphist store &
     # notification
-    exec-once=mako -c ~/.config/mako/config
+    # exec-once=mako -c ~/.config/mako/config
   '';
 }
