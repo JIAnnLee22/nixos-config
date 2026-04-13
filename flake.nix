@@ -10,9 +10,13 @@
       url = "git+https://github.com/mangowm/mango.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    daeuniverse = {
+      url = "git+https://github.com/daeuniverse/flake.nix.git?shallow=1&ref=main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, mango, ... }:
+  outputs = { self, nixpkgs, home-manager, mango, daeuniverse, ... }:
   let
     system = "x86_64-linux";
   in
@@ -25,6 +29,7 @@
         home-manager.nixosModules.home-manager
         ./nixos/desktop/common.nix
         ./nixos/software.nix
+        daeuniverse.nixosModules.daed
         ./nixos/services.nix
         ./nixos/users.nix
         {

@@ -56,7 +56,6 @@
       freerdp
       remmina
       google-chrome
-      v2raya
       wechat
       qq
       feishu
