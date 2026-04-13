@@ -1,8 +1,4 @@
-{ config, lib, pkgs, ... }:
-
-let
-  mangoEnabled = config.custom.desktopSession == "mango";
-in
+{ pkgs, ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
@@ -85,19 +81,13 @@ in
       opencode
       android-tools
       (st.overrideAttrs (oldAttrs: rec {
-        src = fetchFromGitHub {
+        src = pkgs.fetchFromGitHub {
           owner = "JIAnnLee22";
           repo = "st";
           rev = "ce3fa02a182070bd62b0da82398667d5a365952d";
           sha256 = "sha256-GtIJebINcpVC+W0gy6/KZt9sPGlGnuEzoB7LgzdBqFk=";
         };
       }))
-    ])
-    ++ lib.optionals mangoEnabled (with pkgs; [
-      fuzzel
-      cliphist
-      wl-clipboard
-      wl-clip-persist
     ]);
 
   programs.java = {

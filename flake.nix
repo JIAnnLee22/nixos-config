@@ -23,7 +23,7 @@
         ./host/ser
         mango.nixosModules.mango
         home-manager.nixosModules.home-manager
-        ./nixos/desktop.nix
+        ./nixos/desktop/common.nix
         ./nixos/software.nix
         ./nixos/services.nix
         ./nixos/users.nix
