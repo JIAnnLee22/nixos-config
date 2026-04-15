@@ -59,7 +59,6 @@
       wechat
       qq
       feishu
-      android-studio
       rofi
       kitty
       feh
@@ -76,7 +75,6 @@
       obs-studio
       flameshot
       cursor-cli
-      claude-code
       opencode
       android-tools
       jetbrains-toolbox
