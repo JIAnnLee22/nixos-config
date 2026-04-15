@@ -80,6 +80,7 @@
       opencode
       android-tools
       unityhub
+      jetbrains-toolbox
       (st.overrideAttrs (oldAttrs: rec {
         src = pkgs.fetchFromGitHub {
           owner = "JIAnnLee22";
