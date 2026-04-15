@@ -27,10 +27,11 @@
     bind=SUPER,o,toggleoverlay,
     bind=SUPER+SHIFT,I,restore_minimized
     bind=SUPER,s,toggle_scratchpad
-    bind=SUPER,e,set_proportion,1.0
+    bind=SUPER,e,spawn,pcmanfm
+    bind=SUPER+SHIFT,p,spawn,mango-screenshot
     bind=SUPER,r,switch_proportion_preset,
     bind=SUPER,t,setlayout,tile
-    bind=SUPER,s,setlayout,scroller
+    bind=SUPER,p,setlayout,scroller
     bind=SUPER,m,setlayout,monocle
     bind=SUPER,c,setlayout,deck
     bind=SUPER,bracketleft,viewtoleft,0
