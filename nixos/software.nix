@@ -79,7 +79,6 @@
       claude-code
       opencode
       android-tools
-      unityhub
       jetbrains-toolbox
       (st.overrideAttrs (oldAttrs: rec {
         src = pkgs.fetchFromGitHub {
