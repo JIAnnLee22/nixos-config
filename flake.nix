@@ -36,6 +36,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
+            backupFileExtension = "backup";
             users.jiannlee22 = import ./home/jiannlee22.nix;
           };
         }
