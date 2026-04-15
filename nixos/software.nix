@@ -79,6 +79,7 @@
       claude-code
       opencode
       android-tools
+      unityhub
       (st.overrideAttrs (oldAttrs: rec {
         src = pkgs.fetchFromGitHub {
           owner = "JIAnnLee22";
