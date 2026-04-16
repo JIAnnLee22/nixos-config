@@ -1,6 +1,10 @@
 { ... }:
 
 {
+  # JetBrains Toolbox (and many third-party scripts) use shebangs like #!/bin/bash;
+  # NixOS does not ship /bin/bash by default, so envfs provides those paths on demand.
+  services.envfs.enable = true;
+
   nix.gc = {
     automatic = true;
     dates = "weekly";

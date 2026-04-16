@@ -89,4 +89,52 @@
     enable = true;
     package = pkgs.jdk17;
   };
+  programs.bash.enable = true;
+
+  # JetBrains Toolbox installs generic Linux builds (e.g. Android Studio) that expect a normal
+  # dynamic linker + glibc ABI; NixOS otherwise shows the stub-ld error — see
+  # https://nix.dev/permalink/stub-ld
+  programs.nix-ld.enable = true;
+  # Merged with nix-ld’s built-in defaults; these cover JBR/GTK/X11/Wayland needs similar to
+  # nixpkgs’ android-studio wrapper.
+  programs.nix-ld.libraries = with pkgs; [
+    fontconfig
+    freetype
+    libGL
+    libdrm
+    libpng
+    expat
+    libbsd
+    dbus
+    gtk2
+    glib
+    libsecret
+    udev
+    nss_latest
+    nspr
+    alsa-lib
+    libpulseaudio
+    wayland
+    libxkbcommon
+    libxkbfile
+    libxcb
+    libxcb-wm
+    libxcb-render-util
+    libxcb-keysyms
+    libxcb-image
+    libxcb-cursor
+    libx11
+    libxext
+    libxi
+    libxrender
+    libxtst
+    libxrandr
+    libxfixes
+    libxdamage
+    libxcomposite
+    libxcursor
+    libice
+    libsm
+    ncurses5
+  ];
 }
