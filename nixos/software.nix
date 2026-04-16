@@ -63,9 +63,6 @@
       kitty
       feh
       mpv
-      picom
-      dunst
-      xrandr
       qemu_kvm
       pcmanfm
       logseq
