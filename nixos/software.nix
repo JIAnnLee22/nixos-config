@@ -74,6 +74,7 @@
       cursor-cli
       opencode
       android-tools
+      android-studio
       jetbrains-toolbox
       (st.overrideAttrs (oldAttrs: rec {
         src = pkgs.fetchFromGitHub {
