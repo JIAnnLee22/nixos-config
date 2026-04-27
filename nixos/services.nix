@@ -25,6 +25,7 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  services.sshd.enable = true;
   services.pipewire = {
     enable = true;
     pulse.enable = true;
