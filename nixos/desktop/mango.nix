@@ -36,20 +36,10 @@ in
       wl-clip-persist
       xdg-desktop-portal-wlr
     ])
-    ++ [ mango-screenshot ];
+    ++ [
+      mango-screenshot
+      config.services.noctalia-shell.package
+    ];
 
-  programs.dms-shell = {
-    enable = true;
-    systemd = {
-      enable = true;
-      target = "wayland-session.target";
-      restartIfChanged = true;
-    };
-    enableSystemMonitoring = true;
-    enableVPN = true;
-    enableDynamicTheming = true;
-    enableAudioWavelength = true;
-    enableCalendarEvents = true;
-    enableClipboardPaste = true;
-  };
+  services.noctalia-shell.enable = false;
 }

@@ -1,8 +1,8 @@
 { ... }:
 {
   xdg.configFile."mango/autostart.conf".text = ''
-    # dms-shell is managed by programs.dms-shell systemd user service
-    exec-once=dms run &
+    # Start Noctalia shell with the compositor session
+    exec-once=noctalia-shell &
     # fcitx5
     exec-once=fcitx5 --replace -d >/dev/null 2>&1 &
     # obs-studio

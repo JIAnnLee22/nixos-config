@@ -14,9 +14,21 @@
       url = "git+https://github.com/daeuniverse/flake.nix.git?shallow=1&ref=main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, mango, daeuniverse, ... }:
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    mango,
+    daeuniverse,
+    noctalia,
+    ...
+  }:
   let
     system = "x86_64-linux";
   in
@@ -30,6 +42,7 @@
         ./nixos/desktop/common.nix
         ./nixos/software.nix
         daeuniverse.nixosModules.daed
+        noctalia.nixosModules.default
         ./nixos/services.nix
         ./nixos/users.nix
         {
