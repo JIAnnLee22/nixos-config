@@ -75,6 +75,7 @@
       opencode
       android-tools
       android-studio
+      frida-tools
       tree
       (st.overrideAttrs (oldAttrs: rec {
         src = pkgs.fetchFromGitHub {

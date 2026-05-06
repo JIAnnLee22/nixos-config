@@ -1,5 +1,12 @@
 {
   description = "NixOS flake for jiannlee22";
+  nixConfig = {
+    extra-substituters = [
+      "https://mirror.nju.edu.cn/nix-channels/store"
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
+      "https://mirror.sjtu.edu.cn/nix-channels/store"
+    ];
+  };
   inputs = {
     nixpkgs.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-unstable&shallow=1";
     home-manager = {
