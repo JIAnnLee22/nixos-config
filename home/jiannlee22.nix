@@ -42,6 +42,7 @@
   };
 
   imports = [
+    ./fcitx5-profile.nix
     ./mango/config.nix
     ./mango/autostart.nix
     ./mango/bindings.nix
