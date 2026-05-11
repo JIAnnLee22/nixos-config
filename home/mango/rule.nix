@@ -89,7 +89,7 @@
     tagrule=id:6,layout_name:scroller
     tagrule=id:7,layout_name:scroller
     tagrule=id:8,layout_name:scroller
-    tagrule=id:9,layout_name:scroller
+    tagrule=id:9,layout_name:scroller,open_as_floating:1
     layerrule=animation_type_open:zoom,layer_name:fuzzel
     layerrule=animation_type_close:zoom,layer_name:fuzzel
     layerrule=noblur:1,noanim:1,layer_name:selection
