@@ -1,6 +1,21 @@
 { config, pkgs, ... }:
 
 let
+  user = config.users.users.jiannlee22;
+  flakeDir = "${user.home}/nixos-config";
+  nixos-rebuild-latest-mango = pkgs.writeShellApplication {
+    name = "nixos-rebuild-latest-mango";
+    runtimeInputs = with pkgs; [
+      nix
+      git
+    ];
+    text = ''
+      set -euo pipefail
+      flake_dir="''${NIXOS_CONFIG_FLAKE:-${flakeDir}}"
+      nix flake update mango --flake "$flake_dir"
+      exec sudo nixos-rebuild "$@" --flake "$flake_dir"
+    '';
+  };
   mango-screenshot = pkgs.writeShellApplication {
     name = "mango-screenshot";
     runtimeInputs = with pkgs; [
@@ -37,6 +52,7 @@ in
       xdg-desktop-portal-wlr
     ])
     ++ [
+      nixos-rebuild-latest-mango
       mango-screenshot
       config.services.noctalia-shell.package
     ];

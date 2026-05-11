@@ -1,7 +1,32 @@
+{ config, ... }:
+
 {
   home.username = "jiannlee22";
   home.homeDirectory = "/home/jiannlee22";
   home.stateVersion = "25.11";
+
+  # Expose binaries from `go install` (default layout: GOPATH/go + bin under ~/go/bin).
+  home.sessionVariables = {
+    GOPATH = "${config.home.homeDirectory}/go";
+    GOBIN = "${config.home.homeDirectory}/go/bin";
+  };
+  home.sessionPath = [ "${config.home.homeDirectory}/go/bin" ];
+
+  # Interactive non-login bash only reads ~/.bashrc; without it, hm-session-vars.sh
+  # (PATH, GOBIN, GOPATH from Home Manager) is never sourced — `go install` tools stay missing.
+  programs.bash = {
+    enable = true;
+    profileExtra = ''
+      export PATH="$PATH:${config.home.homeDirectory}/.local/share/JetBrains/Toolbox/scripts"
+    '';
+    # HM only puts hm-session-vars in ~/.profile; Kitty (and most terminals) start a
+    # non-login bash, which never reads ~/.profile — only this block runs (after $- check).
+    initExtra = ''
+      if [[ -r "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh" ]]; then
+        . "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh"
+      fi
+    '';
+  };
 
   xdg.mimeApps = {
     enable = true;

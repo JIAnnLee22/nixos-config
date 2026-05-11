@@ -38,49 +38,18 @@
     };
   };
 
-  services.samba = {
+  networking.firewall = {
     enable = true;
-    openFirewall = true;
-    settings = {
-      global = {
-        "workgroup" = "WORKGROUP";
-        "server string" = "LJA File Server";
-        "netbios name" = "smbnix";
-        "security" = "user";
-        "hosts allow" = "192.168.0. 127.0.0.1 localhost";
-        "hosts deny" = "0.0.0.0/0";
-        "guest account" = "nobody";
-        "map to guest" = "never";
-      };
-      "private" = {
-        "path" = "/mnt/shares/private";
-        "browseable" = "yes";
-        "read only" = "no";
-        "guest ok" = "no";
-        "create mask" = "0644";
-        "directory mask" = "0755";
-        "force user" = "nobody";
-        "force group" = "nogroup";
-        "valid users" = "jiannlee22";
-        "writeable" = "yes";
-        "write list" = "jiannlee22";
-      };
-    };
+    allowPing = true;
+    allowedTCPPorts = [ 3389 ];
   };
 
-  services.samba-wsdd = {
+  services.sunshine = {
     enable = true;
+    autoStart = true;
+    capSysAdmin = true; # only needed for Wayland -- omit this when using with Xorg
     openFirewall = true;
   };
+  hardware.uinput.enable = true;
 
-  services.avahi = {
-    publish.enable = true;
-    publish.userServices = true;
-    nssmdns4 = true;
-    enable = true;
-    openFirewall = true;
-  };
-
-  networking.firewall.enable = true;
-  networking.firewall.allowPing = true;
 }

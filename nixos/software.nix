@@ -77,6 +77,9 @@
       android-studio
       frida-tools
       tree
+      moonlight-qt
+      go
+      gcc
       (st.overrideAttrs (oldAttrs: rec {
         src = pkgs.fetchFromGitHub {
           owner = "JIAnnLee22";
