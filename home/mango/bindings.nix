@@ -6,7 +6,7 @@
     # mod keys name: super,ctrl,alt,shift,none
     bind=SUPER+SHIFT,r,reload_config
     bind=SUPER,d,spawn,fuzzel
-    bind=SUPER,Return,spawn,kitty
+    bind=SUPER,Return,spawn,foot
     bind=SUPER+SHIFT,q,quit
     bind=SUPER,q,killclient,
     bind=SUPER+SHIFT,o,spawn,swaylock

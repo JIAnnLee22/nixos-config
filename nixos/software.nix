@@ -80,6 +80,7 @@
       moonlight-qt
       go
       gcc
+      foot
       (st.overrideAttrs (oldAttrs: rec {
         src = pkgs.fetchFromGitHub {
           owner = "JIAnnLee22";
