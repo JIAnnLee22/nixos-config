@@ -71,7 +71,6 @@
       unrar
       obs-studio
       flameshot
-      cursor-cli
       opencode
       android-tools
       android-studio
