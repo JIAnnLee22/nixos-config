@@ -74,5 +74,6 @@
     ./mango/env.nix
     ./mango/rule.nix
     ./mango/layout.nix
+    ./foot.nix
   ];
 }
