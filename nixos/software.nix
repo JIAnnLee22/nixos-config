@@ -72,6 +72,7 @@
       obs-studio
       flameshot
       opencode
+      cursor-cli
       android-tools
       android-studio
       frida-tools
