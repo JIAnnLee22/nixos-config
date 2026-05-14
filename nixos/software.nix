@@ -80,6 +80,7 @@
       go
       gcc
       foot
+      nodejs_24
       (st.overrideAttrs (oldAttrs: rec {
         src = pkgs.fetchFromGitHub {
           owner = "JIAnnLee22";
