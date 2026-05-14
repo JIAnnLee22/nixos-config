@@ -1,9 +1,17 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   home.username = "jiannlee22";
   home.homeDirectory = "/home/jiannlee22";
   home.stateVersion = "25.11";
+
+  home.pointerCursor = {
+    package = pkgs.oreo-cursors-plus;
+    name = "oreo_white_cursors";
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
+  };
 
   # Expose binaries from `go install` (default layout: GOPATH/go + bin under ~/go/bin).
   home.sessionVariables = {
