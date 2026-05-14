@@ -2,6 +2,6 @@
 { ... }:
 {
   xdg.configFile."foot/foot.ini".text = ''
-    font=monospace:size=18
+    font=monospace:size=14
   '';
 }
