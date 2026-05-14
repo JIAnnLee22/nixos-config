@@ -11,7 +11,6 @@
     options = "--delete-older-than 7d";
   };
   nix.settings.auto-optimise-store = true;
-  nix.settings.substituters = [ "https://mirror.nju.edu.cn/nix-channels/store" ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot.loader.systemd-boot.enable = true;

@@ -1,7 +1,7 @@
 {
   description = "NixOS flake for jiannlee22";
   inputs = {
-    nixpkgs.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-unstable&shallow=1";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "git+https://github.com/nix-community/home-manager.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
