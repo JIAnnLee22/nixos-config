@@ -38,21 +38,14 @@
       modules = [
         ./host/ser
         mango.nixosModules.mango
-        home-manager.nixosModules.home-manager
+        home-manager.nixosModules.default
+        ./nixos/home-manager.nix
         ./nixos/desktop/common.nix
         ./nixos/software.nix
         daeuniverse.nixosModules.daed
         noctalia.nixosModules.default
         ./nixos/services.nix
         ./nixos/users.nix
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            backupFileExtension = "backup";
-            users.jiannlee22 = import ./home/jiannlee22.nix;
-          };
-        }
       ];
     };
   };
