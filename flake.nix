@@ -2,8 +2,9 @@
   description = "NixOS flake for jiannlee22";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # master = unstable line; matches nixos-unstable (avoids github: API on flake update).
     home-manager = {
-      url = "git+https://github.com/nix-community/home-manager.git?shallow=1";
+      url = "git+https://github.com/nix-community/home-manager.git?shallow=1&ref=master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mango = {
@@ -31,10 +32,26 @@
   }:
   let
     system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
   in
   {
+    # Standalone: `home-manager switch --flake ~/nixos-config#jiannlee22`
+    # (`-c` is --specialisation, not a config path.)
+    homeConfigurations.jiannlee22 = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [
+        ./home/jiannlee22.nix
+        {
+          home.packages = [
+            home-manager.packages.${system}.home-manager
+          ];
+        }
+      ];
+    };
+
     nixosConfigurations.ser = nixpkgs.lib.nixosSystem {
       inherit system;
+      specialArgs = { inherit home-manager; };
       modules = [
         ./host/ser
         mango.nixosModules.mango
