@@ -8,10 +8,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1771591323,
-        "narHash": "sha256-uX6uAWdCdfzgv6dQ+O2Lj5QzkfN6BflyOsxj1pEael0=",
+        "lastModified": 1778001093,
+        "narHash": "sha256-JSPe258LVV3zEpxoM03POYMjNNj8wXUzliIrkDOgHD0=",
         "ref": "main",
-        "rev": "62d55a8172c5ec028b21d50ea54c7c73107db6aa",
+        "rev": "87281ee152b189d1d0c7840c476ef9eed6e33d8d",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/daeuniverse/flake.nix.git"
@@ -28,11 +28,11 @@
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
-        "lastModified": 1767609335,
-        "narHash": "sha256-feveD98mQpptwrAEggBQKJTYbvwwglSbOv53uCfH9PY=",
+        "lastModified": 1775087534,
+        "narHash": "sha256-91qqW8lhL7TLwgQWijoGBbiD4t7/q75KTi8NxjVmSmA=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "250481aafeb741edfe23d29195671c19b36b6dca",
+        "rev": "3107b77cd68437b9a76194f0f7f9c55f2329ca5b",
         "type": "github"
       },
       "original": {
@@ -90,10 +90,10 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1778803638,
-        "narHash": "sha256-QKHFmPv1QoTuQJRMZQ7xDa1c/x9sD1nv3YY/2J+BGCE=",
+        "lastModified": 1778813569,
+        "narHash": "sha256-RBQfeTM8J0AWE+A7vYSIYt0fuLS1kNYZYoocNjKDAeo=",
         "ref": "refs/heads/main",
-        "rev": "e17d443a430d87374a27b7a5a7b2db7639666d00",
+        "rev": "1ce245af5cff99f8c66eb73a6c599ff77e90dada",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/mangowm/mango.git"
@@ -108,16 +108,17 @@
       "locked": {
         "lastModified": 1778443072,
         "narHash": "sha256-zi7/fsqM/kFdNuED//4WOCUtezGtKKqRNORjMvfwjnA=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
+        "ref": "nixos-unstable",
         "rev": "da5ad661ba4e5ef59ba743f0d112cbc30e474f32",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/NixOS/nixpkgs.git"
       },
       "original": {
-        "owner": "nixos",
         "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/NixOS/nixpkgs.git"
       }
     },
     "nixpkgs-lib": {
@@ -160,15 +161,17 @@
       "locked": {
         "lastModified": 1778784694,
         "narHash": "sha256-IDZ7uYP2LH3+NIZOVSnfNqmdKg09qSLieQKgfSB7K8Q=",
-        "owner": "noctalia-dev",
-        "repo": "noctalia-shell",
+        "ref": "main",
         "rev": "2a600494fbb4607f76487cb4ee3169232922ba0a",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/noctalia-dev/noctalia-shell.git"
       },
       "original": {
-        "owner": "noctalia-dev",
-        "repo": "noctalia-shell",
-        "type": "github"
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/noctalia-dev/noctalia-shell.git"
       }
     },
     "noctalia-qs": {

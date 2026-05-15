@@ -1,7 +1,8 @@
 {
   description = "NixOS flake for jiannlee22";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # `github:` uses api.github.com and hits anonymous rate limits on shared IPs (VPN/daed).
+    nixpkgs.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
     # master = unstable line; matches nixos-unstable (avoids github: API on flake update).
     home-manager = {
       url = "git+https://github.com/nix-community/home-manager.git?shallow=1&ref=master";
@@ -16,7 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "git+https://github.com/noctalia-dev/noctalia-shell.git?shallow=1&ref=main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
