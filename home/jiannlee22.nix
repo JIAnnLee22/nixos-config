@@ -37,6 +37,16 @@
     '';
   };
 
+  # Daed/dae transparent proxy often breaks GitHub SSH on port 22; use GitHub’s SSH/443 endpoint.
+  programs.ssh = {
+    enable = true;
+    matchBlocks."github.com" = {
+      hostname = "ssh.github.com";
+      port = 443;
+      user = "git";
+    };
+  };
+
   xdg.mimeApps = {
     enable = true;
     associations.added = {
