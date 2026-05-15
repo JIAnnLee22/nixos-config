@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   xdg.configFile."mango/env.conf".text = ''
     env=XCURSOR_SIZE,24
@@ -12,6 +12,7 @@
     env=QT_AUTO_SCREEN_SCALE_FACTOR,1
     env=QT_WAYLAND_FORCE_DPI,96
     env=QT_QPA_PLATFORM,Wayland;xcb
+    env=OBSFILE_ROOT,${config.home.homeDirectory}/obs
     # env = DISPLAY,:2
     # exec = xwayland-satellite :2
   '';

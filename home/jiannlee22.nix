@@ -17,7 +17,7 @@
   home.sessionVariables = {
     GOPATH = "${config.home.homeDirectory}/go";
     GOBIN = "${config.home.homeDirectory}/go/bin";
-    OBSFILE_ROOT= "${config.home.homeDirectory}/obs";
+    OBSFILE_ROOT = "${config.home.homeDirectory}/obs";
   };
   home.sessionPath = [ "${config.home.homeDirectory}/go/bin" ];
 
@@ -84,5 +84,6 @@
     ./mango/rule.nix
     ./mango/layout.nix
     ./foot.nix
+    ./neovim.nix
   ];
 }
