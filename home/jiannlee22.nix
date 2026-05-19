@@ -19,7 +19,10 @@
     GOBIN = "${config.home.homeDirectory}/go/bin";
     OBSFILE_ROOT = "${config.home.homeDirectory}/obs";
   };
-  home.sessionPath = [ "${config.home.homeDirectory}/go/bin" ];
+  home.sessionPath = [ 
+  "${config.home.homeDirectory}/go/bin"
+  "${config.home.homeDirectory}/obs/obsgen/linux"
+  ];
 
   # Interactive non-login bash only reads ~/.bashrc; without it, hm-session-vars.sh
   # (PATH, GOBIN, GOPATH from Home Manager) is never sourced — `go install` tools stay missing.
