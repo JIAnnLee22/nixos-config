@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1779193733,
-        "narHash": "sha256-wCQvcRX92rvfHYdchY2ovfGXrpYRPw9cp6nll43vToY=",
+        "lastModified": 1779268566,
+        "narHash": "sha256-2WKcH8N9jKOS02mVlgLT41c3s0M8l0WyJhkCYhy7RII=",
         "ref": "refs/heads/main",
-        "rev": "2d1063dac39de671c921ec50c08685e98df73770",
-        "revCount": 8,
+        "rev": "aac5d82f251e79b1bd65f3a2f5ef90911f65259b",
+        "revCount": 10,
         "type": "git",
         "url": "https://github.com/JIAnnLee22/android.flake.git"
       },

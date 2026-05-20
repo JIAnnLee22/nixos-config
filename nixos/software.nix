@@ -3,13 +3,6 @@
 {
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      jdk11 = prev.javaPackages.compiler.openjdk11;
-      jdk17 = prev.javaPackages.compiler.openjdk17;
-    })
-  ];
-
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
@@ -50,8 +43,6 @@
       wget
       git
       lazygit
-      javaPackages.compiler.openjdk11
-      javaPackages.compiler.openjdk17
       freerdp
       remmina
       google-chrome
@@ -88,10 +79,5 @@
         };
       }))
     ]);
-
-  programs.java = {
-    enable = true;
-    package = pkgs.jdk17;
-  };
   programs.bash.enable = true;
 }
