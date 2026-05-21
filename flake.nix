@@ -25,7 +25,7 @@
     };
   };
 
-  outputs = {
+  outputs = inputs @ {
     self,
     nixpkgs,
     home-manager,
@@ -56,7 +56,7 @@
 
     nixosConfigurations.ser = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit home-manager; };
+      specialArgs = { inherit inputs home-manager; };
       modules = [
         ./host/ser
         mango.nixosModules.mango
