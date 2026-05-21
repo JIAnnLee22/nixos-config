@@ -62,6 +62,7 @@
       obs-studio
       flameshot
       opencode
+      pi-coding-agent
       cursor-cli
       frida-tools
       tree

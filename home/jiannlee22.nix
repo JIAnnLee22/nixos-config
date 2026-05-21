@@ -18,6 +18,7 @@
     GOPATH = "${config.home.homeDirectory}/go";
     GOBIN = "${config.home.homeDirectory}/go/bin";
     OBSFILE_ROOT = "${config.home.homeDirectory}/obs";
+    PI_CODING_AGENT_DIR = "${config.xdg.configHome}/pi";
   };
   home.sessionPath = [ 
   "${config.home.homeDirectory}/go/bin"
