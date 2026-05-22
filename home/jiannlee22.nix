@@ -19,6 +19,7 @@
     GOBIN = "${config.home.homeDirectory}/go/bin";
     OBSFILE_ROOT = "${config.home.homeDirectory}/obs";
     PI_CODING_AGENT_DIR = "${config.xdg.configHome}/pi";
+    PI_CODING_AGENT_SESSION_DIR = "${config.xdg.dataHome}/pi/sessions";
   };
   home.sessionPath = [ 
   "${config.home.homeDirectory}/go/bin"
