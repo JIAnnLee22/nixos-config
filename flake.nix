@@ -16,6 +16,10 @@
       url = "git+https://github.com/daeuniverse/flake.nix.git?shallow=1&ref=main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    noctalia = {
+      url = "git+https://github.com/noctalia-dev/noctalia-shell.git?shallow=1&ref=main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     androidShell = {
       url = "git+https://github.com/JIAnnLee22/android.flake.git";
     };
@@ -27,6 +31,7 @@
     home-manager,
     mango,
     daeuniverse,
+    noctalia,
     androidShell,
     ...
   }:
@@ -63,6 +68,7 @@
           nix.registry.androidShell.flake = androidShell;
         }
         daeuniverse.nixosModules.daed
+        noctalia.nixosModules.default
         ./nixos/services.nix
         ./nixos/users.nix
       ];

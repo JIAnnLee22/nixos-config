@@ -103,6 +103,5 @@
     ./mango/layout.nix
     ./foot.nix
     ./neovim.nix
-    ./waybar.nix
   ];
 }
