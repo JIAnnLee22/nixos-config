@@ -20,10 +20,12 @@
     OBSFILE_ROOT = "${config.home.homeDirectory}/obs";
     PI_CODING_AGENT_DIR = "${config.xdg.configHome}/pi";
     PI_CODING_AGENT_SESSION_DIR = "${config.xdg.dataHome}/pi/sessions";
+    NPM_CONFIG_PREFIX = "${config.home.homeDirectory}/.npm-global";
   };
   home.sessionPath = [ 
   "${config.home.homeDirectory}/go/bin"
   "${config.home.homeDirectory}/obs/obsgen/linux"
+  "${config.home.homeDirectory}/.npm-global/bin"
   ];
 
   # Interactive non-login bash only reads ~/.bashrc; without it, hm-session-vars.sh
