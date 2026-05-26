@@ -54,8 +54,5 @@ in
     ++ [
       nixos-rebuild-latest-mango
       mango-screenshot
-      config.services.noctalia-shell.package
     ];
-
-  services.noctalia-shell.enable = false;
 }

@@ -1,8 +1,8 @@
 { ... }:
 {
   xdg.configFile."mango/autostart.conf".text = ''
-    # Start Noctalia shell with the compositor session
-    exec-once=noctalia-shell &
+    # Status bar
+    exec-once=waybar &
     # fcitx5
     exec-once=fcitx5 --replace -d >/dev/null 2>&1 &
     # obs-studio
