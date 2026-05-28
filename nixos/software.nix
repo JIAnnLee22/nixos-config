@@ -68,6 +68,10 @@
       gcc
       foot
       nodejs_24
+      # JDK 版本管理
+      jdk11
+      jdk17
+      # Android Studio 配置已移至 nixos/android-studio.nix
       (st.overrideAttrs (oldAttrs: rec {
         src = pkgs.fetchFromGitHub {
           owner = "JIAnnLee22";
@@ -76,11 +80,6 @@
           sha256 = "sha256-GtIJebINcpVC+W0gy6/KZt9sPGlGnuEzoB7LgzdBqFk=";
         };
       }))
-    ])
-    ++ (with inputs.androidShell.packages.${pkgs.stdenv.hostPlatform.system}; [
-      as              # rofi 里搜 "Android Studio"
-      androidShell11  # 终端命令
-      androidShell17  # 终端命令
     ]);
   programs.bash.enable = true;
 }
