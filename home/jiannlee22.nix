@@ -104,6 +104,7 @@
   imports = [
     ./fcitx5-profile.nix
     ./mango/config.nix
+    ./mango/wallpaper.nix
     ./mango/autostart.nix
     ./mango/bindings.nix
     ./mango/env.nix

@@ -1,6 +1,7 @@
-{ ... }:
+{ mangoWallpaperPath, ... }:
 {
   xdg.configFile."mango/autostart.conf".text = ''
+    exec-once=swaybg -i ${mangoWallpaperPath} -m fill &
     exec-once=waybar &
     exec-once=mako &
     exec-once=fcitx5 --replace -d >/dev/null 2>&1 &
