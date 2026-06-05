@@ -71,6 +71,7 @@
       # JDK 版本管理
       jdk11
       jdk17
+      fzf
       # Android Studio 配置已移至 nixos/android-studio.nix
       (st.overrideAttrs (oldAttrs: rec {
         src = pkgs.fetchFromGitHub {
