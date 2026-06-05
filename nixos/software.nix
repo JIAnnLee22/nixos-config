@@ -34,6 +34,19 @@
     };
   };
 
+  # 设置默认 JDK 版本为 JDK 17
+  programs.java = {
+    enable = true;
+    package = pkgs.jdk17;
+  };
+
+  # 配置图形化 sudo 密码输入
+  security.sudo.extraConfig = ''
+    # 使用图形化 askpass 程序
+    Defaults env_keep += "DISPLAY WAYLAND_DISPLAY XAUTHORITY"
+    Defaults env_keep += "SUDO_ASKPASS"
+  '';
+
   environment.systemPackages =
     (with pkgs; [
       htop
@@ -61,6 +74,8 @@
       jdk11
       jdk17
       fzf
+      # 图形化 askpass 程序
+      x11_ssh_askpass
       # Android Studio 配置已移至 nixos/android-studio.nix
       (st.overrideAttrs (oldAttrs: rec {
         src = pkgs.fetchFromGitHub {
