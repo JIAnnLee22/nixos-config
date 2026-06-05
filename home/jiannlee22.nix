@@ -112,7 +112,7 @@
     ./mango/env.nix
     ./mango/rule.nix
     ./foot.nix
-    ./neovim.nix
+    ./lsp-servers.nix
     ./waybar.nix
     ./mako.nix
   ];

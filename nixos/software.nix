@@ -74,6 +74,7 @@
       jdk11
       jdk17
       fzf
+      neovim
       # 图形化 askpass 程序
       x11_ssh_askpass
       # Android Studio 配置已移至 nixos/android-studio.nix
