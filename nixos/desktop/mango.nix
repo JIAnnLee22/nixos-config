@@ -28,6 +28,9 @@ let
   };
 in
 {
+  # swaylock PAM is only auto-configured with programs.sway; Mango uses swaylock directly.
+  security.pam.services.swaylock = {};
+
   programs.mango.enable = true;
 
   services.xserver.enable = true;
@@ -54,8 +57,5 @@ in
     ++ [
       nixos-rebuild-latest-mango
       mango-screenshot
-      config.services.noctalia-shell.package
     ];
-
-  services.noctalia-shell.enable = false;
 }

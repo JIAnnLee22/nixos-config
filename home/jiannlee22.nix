@@ -108,8 +108,9 @@
     ./mango/bindings.nix
     ./mango/env.nix
     ./mango/rule.nix
-    ./mango/layout.nix
     ./foot.nix
     ./neovim.nix
+    ./waybar.nix
+    ./mako.nix
   ];
 }

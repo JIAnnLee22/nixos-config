@@ -18,6 +18,7 @@
       fira-code
       fira-code-symbols
       wqy_microhei
+      maple-mono.NF-CN
     ];
 
     fontconfig = {
