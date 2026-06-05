@@ -1,26 +1,23 @@
 { pkgs, inputs, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "electron-39.8.10" # logseq
+    ];
+  };
 
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
+      noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-color-emoji
       liberation_ttf
       fira-code
       fira-code-symbols
-      mplus-outline-fonts.githubRelease
-      dina-font
-      proggyfonts
-      fira-code
-      jetbrains-mono
-      noto-fonts
       wqy_microhei
-      wqy_zenhei
-      texlivePackages.noto-emoji
-      source-han-sans
     ];
 
     fontconfig = {
@@ -30,7 +27,7 @@
       defaultFonts = {
         sansSerif = [ "Noto Sans" "Noto Sans CJK SC" "WenQuanYi Micro Hei" ];
         serif = [ "Noto Serif" "Liberation Serif" "Noto Serif CJK SC" "WenQuanYi Micro Hei" ];
-        monospace = [ "Fira Code" "JetBrains Mono" "Noto Sans Mono CJK SC" "WenQuanYi Micro Hei" ];
+        monospace = [ "Fira Code" "Noto Sans Mono CJK SC" "WenQuanYi Micro Hei" ];
         emoji = [ "Noto Color Emoji" ];
       };
     };
@@ -38,7 +35,6 @@
 
   environment.systemPackages =
     (with pkgs; [
-      vim
       htop
       wget
       git
@@ -49,9 +45,6 @@
       wechat
       qq
       feishu
-      rofi
-      kitty
-      feh
       mpv
       qemu_kvm
       pcmanfm
@@ -59,12 +52,7 @@
       zip
       unzip
       unrar
-      obs-studio
-      flameshot
-      frida-tools
       tree
-      moonlight-qt
-      go
       gcc
       foot
       nodejs_24

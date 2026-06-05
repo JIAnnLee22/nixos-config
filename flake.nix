@@ -56,6 +56,7 @@
       inherit system;
       specialArgs = { inherit inputs home-manager; };
       modules = [
+        { nixpkgs.overlays = [ (import ./nixos/qq-overlay.nix) ]; }
         ./host/ser
         mango.nixosModules.mango
         home-manager.nixosModules.default
