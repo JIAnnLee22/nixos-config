@@ -1,15 +1,20 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  xdg.configFile."nvim" = {
+    source = ./nvim;
+    recursive = true;
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
     withRuby = false;
     withPython3 = false;
-    extraConfig =  ''
-        set number
-        set number relativenumber
-        set cc=120
-    '';
   };
-}
 
+  home.packages = with pkgs; [
+    fzf
+    ripgrep
+    stylua
+  ];
+}
