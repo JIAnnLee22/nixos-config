@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     pamixer
     wlogout
-    swaylock
   ];
 
   programs.waybar = {
