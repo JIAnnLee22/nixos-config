@@ -12,10 +12,7 @@
       url = "git+https://github.com/mangowm/mango.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    daeuniverse = {
-      url = "git+https://github.com/daeuniverse/flake.nix.git?shallow=1&ref=main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+
   };
 
   outputs = inputs @ {
@@ -23,8 +20,6 @@
     nixpkgs,
     home-manager,
     mango,
-    daeuniverse,
-
     ...
   }:
   let
@@ -50,7 +45,7 @@
       inherit system;
       specialArgs = { inherit inputs home-manager; };
       modules = [
-        { nixpkgs.overlays = [ (import ./nixos/qq-overlay.nix) ]; }
+        { nixpkgs.overlays = [ (import ./nixos/qq-overlay.nix) (import ./nixos/daed-overlay.nix) ]; }
         ./host/ser
         mango.nixosModules.mango
         home-manager.nixosModules.default
@@ -59,7 +54,6 @@
         ./nixos/software.nix
         ./nixos/android-studio.nix
 
-        daeuniverse.nixosModules.daed
         ./nixos/services.nix
         ./nixos/users.nix
       ];

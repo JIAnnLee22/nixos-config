@@ -8,10 +8,38 @@ final: prev: {
     };
   });
 
-  wechat = prev.wechat.overrideAttrs (_: {
+  # wechat 包使用 appimageTools，需要特殊处理
+  # 直接覆盖 src 无法生效，因为 src 是在 callPackage 时传递的
+  wechat = let
+    version = "4.1.1.4";
     src = prev.fetchurl {
       url = "https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.AppImage";
-      hash = "sha256-XxAvFnlljqurGPDgRr+DnuCKbdVvgXBPh02DLHY3Oz8=";
+      hash = "sha256-vTTkuFm1LhAqVvuynIfYdROPf19nfCQIOGhw6Z+dOeo=";
     };
-  });
+    appimageContents = prev.appimageTools.extract {
+      pname = "wechat";
+      inherit version src;
+      postExtract = ''
+        patchelf --replace-needed libtiff.so.5 libtiff.so $out/opt/wechat/wechat
+      '';
+    };
+  in prev.appimageTools.wrapAppImage {
+    pname = "wechat";
+    inherit version;
+    meta = {
+      description = "Messaging and calling app";
+      homepage = "https://www.wechat.com/en/";
+      license = prev.lib.licenses.unfree;
+      mainProgram = "wechat";
+      platforms = [ "x86_64-linux" "aarch64-linux" ];
+    };
+    src = appimageContents;
+    extraInstallCommands = ''
+      mkdir -p $out/share/applications
+      cp ${appimageContents}/wechat.desktop $out/share/applications/
+      mkdir -p $out/share/icons/hicolor/256x256/apps
+      cp ${appimageContents}/wechat.png $out/share/icons/hicolor/256x256/apps/
+      substituteInPlace $out/share/applications/wechat.desktop --replace-fail AppRun wechat
+    '';
+  };
 }
