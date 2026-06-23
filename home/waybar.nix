@@ -138,7 +138,7 @@
       "custom/power" = {
         format = "󰣇";
         tooltip = false;
-        on-click = "wlogout -C ~/.config/mango/wlogout/style.css -l ~/.config/mango/wlogout/layout -b 6 --protocol layer-shell";
+        on-click = "wlogout -l ~/.config/mango/wlogout/layout -b 6 --protocol layer-shell";
       };
     };
 

@@ -4,6 +4,5 @@
 {
   xdg.configFile = {
     "mango/wlogout/layout".source = ../mango/wlogout/layout;
-    "mango/wlogout/style.css".source = ../mango/wlogout/style.css;
   };
 }
