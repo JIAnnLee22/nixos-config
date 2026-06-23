@@ -1,3 +1,4 @@
+# Home Manager NixOS 模块配置
 { home-manager, ... }:
 
 {
@@ -6,7 +7,6 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
-    # Same revision as the NixOS module; puts `home-manager` on PATH for standalone use.
     users.jiannlee22 = { pkgs, ... }: {
       imports = [ ../home/jiannlee22.nix ];
       home.packages = [

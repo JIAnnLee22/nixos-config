@@ -1,4 +1,4 @@
-# Fcitx5 码表与输入法描述（原仓库 fcitx5/ 目录内容迁入此处）。
+# Fcitx5 码表与输入法描述
 # 将 *.dict 放在同目录下的 fcitx5-dicts/ 中（与下方 conf 里 File=table/… 文件名一致）。
 { pkgs, lib, ... }:
 

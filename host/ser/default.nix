@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../nixos/desktop/mango.nix
+    ./networking.nix
   ];
 
   networking.hostName = "ser";

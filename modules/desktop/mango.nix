@@ -1,3 +1,4 @@
+# Mango WM 桌面环境配置
 { config, pkgs, ... }:
 
 let
