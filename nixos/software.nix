@@ -26,9 +26,22 @@
       hinting.enable = true;
       subpixel.lcdfilter = "default";
       defaultFonts = {
-        sansSerif = [ "Noto Sans" "Noto Sans CJK SC" "WenQuanYi Micro Hei" ];
-        serif = [ "Noto Serif" "Liberation Serif" "Noto Serif CJK SC" "WenQuanYi Micro Hei" ];
-        monospace = [ "Fira Code" "Noto Sans Mono CJK SC" "WenQuanYi Micro Hei" ];
+        sansSerif = [
+          "Noto Sans"
+          "Noto Sans CJK SC"
+          "WenQuanYi Micro Hei"
+        ];
+        serif = [
+          "Noto Serif"
+          "Liberation Serif"
+          "Noto Serif CJK SC"
+          "WenQuanYi Micro Hei"
+        ];
+        monospace = [
+          "Fira Code"
+          "Noto Sans Mono CJK SC"
+          "WenQuanYi Micro Hei"
+        ];
         emoji = [ "Noto Color Emoji" ];
       };
     };
@@ -47,8 +60,9 @@
     Defaults env_keep += "SUDO_ASKPASS"
   '';
 
-  environment.systemPackages =
-    (with pkgs; [
+  environment.systemPackages = (
+    with pkgs;
+    [
       htop
       wget
       git
@@ -77,6 +91,7 @@
       neovim
       # 图形化 askpass 程序
       x11_ssh_askpass
+      vial
       # Android Studio 配置已移至 nixos/android-studio.nix
       (st.overrideAttrs (oldAttrs: rec {
         src = pkgs.fetchFromGitHub {
@@ -86,6 +101,7 @@
           sha256 = "sha256-GtIJebINcpVC+W0gy6/KZt9sPGlGnuEzoB7LgzdBqFk=";
         };
       }))
-    ]);
+    ]
+  );
   programs.bash.enable = true;
 }
