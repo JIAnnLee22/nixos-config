@@ -7,6 +7,8 @@
   home.homeDirectory = "/home/jiannlee22";
   home.stateVersion = "25.11";
 
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
     # Shell 配置
     ./shell/env.nix
@@ -18,6 +20,7 @@
 
     # 程序配置
     ./programs/jdks.nix
+    ./programs/wlogout.nix
     ./lsp-servers.nix
 
     # 服务

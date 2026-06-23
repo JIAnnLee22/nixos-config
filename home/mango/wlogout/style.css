@@ -1,0 +1,42 @@
+/* ============================================
+   wlogout Style — Matching Mango/Gruvbox Theme
+   ============================================ */
+
+* {
+    font-family: "Maple Mono NF CN", monospace;
+    background-image: none;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    all: unset;
+}
+
+window {
+    background-color: rgba(32, 27, 20, 0.9);
+}
+
+button {
+    color: #c9b890;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: rgba(36, 32, 26, 0.8);
+    border-radius: 12px;
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid rgba(68, 68, 68, 0.5);
+}
+
+button:focus,
+button:active,
+button:hover {
+    background-color: rgba(68, 68, 68, 0.8);
+    color: #89aa61;
+    border-color: #89aa61;
+}
+
+#lock {
+    margin-left: 100px;
+}
+
+#shutdown {
+    margin-right: 100px;
+}
