@@ -40,5 +40,6 @@
     ./foot.nix
     ./waybar.nix
     ./mako.nix
+    ./yazi.nix
   ];
 }
