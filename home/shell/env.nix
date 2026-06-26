@@ -3,6 +3,7 @@
 
 {
   home.sessionVariables = {
+    EDITOR = "nvim";
     GOPATH = "${config.home.homeDirectory}/go";
     GOBIN = "${config.home.homeDirectory}/go/bin";
     OBSFILE_ROOT = "${config.home.homeDirectory}/obs";

@@ -8,4 +8,10 @@
       "electron-39.8.10" # logseq
     ];
   };
+
+  # 设置默认编辑器为 neovim
+  environment.variables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
 }
