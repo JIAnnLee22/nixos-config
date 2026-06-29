@@ -78,9 +78,8 @@
       };
 
       clock = {
-        format = " {:%H:%M}";
-        format-alt = " {:L%A, %b %d}";
-        tooltip-format = "{:%Y}";
+        format = " {:%Y-%m-%d %H:%M:%S}";
+        interval = 1;
       };
 
       cpu = {
