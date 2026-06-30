@@ -9,7 +9,6 @@
     feishu
     mpv
     pcmanfm
-    logseq
     foot
     freerdp
     remmina

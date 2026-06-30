@@ -3,7 +3,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    gcc
     nodejs_24
     neovim
   ];

@@ -75,7 +75,6 @@
         ./modules/programs/cli.nix
         ./modules/programs/development.nix
         ./modules/programs/gui.nix
-        ./modules/programs/st.nix
         
         # 硬件服务
         ./modules/audio.nix
