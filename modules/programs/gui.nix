@@ -17,5 +17,6 @@
     x11_ssh_askpass
     vial
     android-studio
+    android-tools
   ];
 }
