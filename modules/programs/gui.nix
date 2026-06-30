@@ -17,5 +17,6 @@
     # 图形化 askpass 程序
     x11_ssh_askpass
     vial
+    android-studio
   ];
 }

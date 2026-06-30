@@ -81,8 +81,6 @@
         ./modules/audio.nix
         ./modules/bluetooth.nix
         
-        # 程序 - Android
-        ./modules/programs/android.nix
         ./modules/programs/fcitx5.nix
         
         # 桌面环境
