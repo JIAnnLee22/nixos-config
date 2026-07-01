@@ -25,7 +25,7 @@ let
       wl-clipboard
       config.programs.mango.package
     ];
-    text = builtins.readFile ../../home/mango/screenshot.sh;
+    text = builtins.readFile ./screenshot.sh;
   };
 in
 {
@@ -43,7 +43,6 @@ in
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
-      xdg-desktop-portal-wlr
     ];
   };
 
@@ -53,7 +52,6 @@ in
       cliphist
       wl-clipboard
       wl-clip-persist
-      xdg-desktop-portal-wlr
     ])
     ++ [
       nixos-rebuild-latest-mango

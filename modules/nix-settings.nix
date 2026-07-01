@@ -12,6 +12,11 @@
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
       trusted-users = [ "root" "@wheel" ];
+      # 性能优化
+      max-jobs = "auto";
+      min-free = 5 * 1024 * 1024 * 1024;  # 5GB
+      max-free = 20 * 1024 * 1024 * 1024;  # 20GB
+      build-cores = 0;  # 使用所有可用核心
       substituters = [
         "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
         "https://mirrors.ustc.edu.cn/nix-channels/store"
