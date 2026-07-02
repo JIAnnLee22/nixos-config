@@ -1,8 +1,4 @@
 require('vim._core.ui2').enable({
-  enable = true, -- Whether to enable or disable the UI.
+  enable = true,
 })
-require("core.autocmd")
-require("core.basic")
-require("core.keymap")
-require("core.command")
-require("plugins")
+require('core.basic')
