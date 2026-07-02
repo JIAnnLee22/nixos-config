@@ -17,9 +17,6 @@ local function setup_servers()
 	for name, opts in pairs(config.servers) do
 		setup_server(name, opts)
 	end
-
-	local kotlin_server = config.kotlin_server()
-	setup_server(kotlin_server, config.kotlin_overrides[kotlin_server])
 end
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -48,6 +45,7 @@ vim.api.nvim_create_autocmd("User", {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
+				rust = { "rustfmt" },
 			},
 			format_on_save = {
 				timeout_ms = 500,

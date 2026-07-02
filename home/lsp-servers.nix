@@ -7,5 +7,6 @@ in
     clang-tools
     lua-language-server
     nil
+    rust-analyzer
   ];
 }
