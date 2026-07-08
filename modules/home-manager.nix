@@ -8,7 +8,7 @@
     useUserPackages = true;
     backupFileExtension = "backup";
     # 将 nixvim home-manager 模块注入所有用户
-    sharedModules = [ inputs.nixvim.homeManagerModules.nixvim ];
+    sharedModules = [ inputs.nixvim.homeModules.nixvim ];
     users.jiannlee22 = { pkgs, ... }: {
       imports = [ ../home/jiannlee22.nix ];
       home.packages = [
