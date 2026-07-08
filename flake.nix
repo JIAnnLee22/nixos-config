@@ -12,7 +12,10 @@
       url = "git+https://github.com/mangowm/mango.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    nixvim = {
+      url = "git+https://github.com/nix-community/nixvim.git?shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -20,6 +23,7 @@
     nixpkgs,
     home-manager,
     mango,
+    nixvim,
     ...
   }:
   let
