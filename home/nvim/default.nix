@@ -12,8 +12,36 @@
       wl-copy.enable = true;
       xsel.enable = true;
     };
+    plugins.clangd-extensions = {
+      enable = true;
+      enableOffsetEncodingWorkaround = true;
+    };
+
     plugins.lsp = {
       enable = true;
+
+      keymaps = {
+        silent = true;
+        lspBuf = {
+          gd = "definition";
+          gD = "declaration";
+          gi = "implementation";
+          gr = "references";
+          K = "hover";
+        };
+        diagnostic = {
+          "[d" = "goto_prev";
+          "]d" = "goto_next";
+        };
+        extra = [
+          {
+            mode = "n";
+            key = "<leader>ch";
+            action = "<cmd>ClangdSwitchSourceHeader<CR>";
+            options.desc = "C/C++ switch source/header";
+          }
+        ];
+      };
 
       servers = {
         nixd = {
@@ -47,7 +75,20 @@
           rootMarkers = [
             "compile_commands.json"
             "compile_flags.txt"
+            ".clangd"
+            "CMakeLists.txt"
+            "Makefile"
+            "meson.build"
             ".git"
+          ];
+
+          # 让没有 compile_commands.json 的简单 C 项目也能解析本地头文件。
+          # 更复杂项目仍建议用 cmake/bear 生成 compile_commands.json。
+          extraOptions.init_options.fallbackFlags = [
+            "-std=c17"
+            "-I."
+            "-Iinclude"
+            "-Isrc"
           ];
 
           cmd = [
