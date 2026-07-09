@@ -13,6 +13,7 @@
     unzip
     unrar
   ];
+  # clashtui 及 mihomo 后端在 modules/services/clashtui.nix 中统一配置
 
   programs.bash.enable = true;
 }
