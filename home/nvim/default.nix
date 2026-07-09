@@ -58,6 +58,57 @@
             "--header-insertion=iwyu"
           ];
         };
+        gopls = {
+          enable = true;
+          package = pkgs.gopls;
+
+          filetypes = [
+            "go"
+            "gomod"
+            "gowork"
+            "gotmpl"
+          ];
+
+          rootMarkers = [
+            "go.work"
+            "go.mod"
+            ".git"
+          ];
+
+          settings.gopls = {
+            gofumpt = true;
+            staticcheck = true;
+            usePlaceholders = true;
+            completeUnimported = true;
+            analyses = {
+              shadow = true;
+              unusedparams = true;
+              unusedwrite = true;
+            };
+          };
+        };
+        rust_analyzer = {
+          enable = true;
+          package = pkgs.rust-analyzer;
+          installCargo = true;
+          installRustc = true;
+
+          filetypes = [ "rust" ];
+
+          rootMarkers = [
+            "Cargo.toml"
+            "rust-project.json"
+            ".git"
+          ];
+
+          settings."rust-analyzer" = {
+            cargo.allFeatures = true;
+            check.command = "clippy";
+            rustfmt.overrideCommand = [
+              "${pkgs.rustfmt}/bin/rustfmt"
+            ];
+          };
+        };
       };
     };
     plugins.lsp-format = {
