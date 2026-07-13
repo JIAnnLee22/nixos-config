@@ -12,6 +12,10 @@
       url = "git+https://github.com/mangowm/mango.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    waybar = {
+      url = "git+https://github.com/Alexays/Waybar.git?shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixvim = {
       url = "git+https://github.com/nix-community/nixvim.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,12 +28,24 @@
       nixpkgs,
       home-manager,
       mango,
+      waybar,
       nixvim,
       ...
     }:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      overlays = [
+        waybar.overlays.default
+        (_final: prev: {
+          waybar = prev.waybar.overrideAttrs (_old: {
+            preferLocalBuild = true;
+            allowSubstitutes = false;
+          });
+        })
+      ] ++ import ./modules/overlays;
+      pkgs = import nixpkgs {
+        inherit system overlays;
+      };
     in
     {
       # Standalone: `home-manager switch --flake ~/nixos-config#jiannlee22`
@@ -52,7 +68,7 @@
         specialArgs = { inherit inputs home-manager; };
         modules = [
           # Overlays
-          { nixpkgs.overlays = import ./modules/overlays; }
+          { nixpkgs.overlays = overlays; }
 
           # 主机配置（包括硬件和主机特定网络）
           ./host/ser

@@ -16,36 +16,36 @@
       spacing = 4;
 
       modules-left = [
-        "ext/workspaces"
+        "mango/workspaces"
+        "mango/layout"
         "wlr/taskbar"
-        "dwl/window"
+        "mango/window"
       ];
-      modules-center = [ ];
+      modules-center = [ 
+        "clock"
+      ];
       modules-right = [
-        "network"
         "cpu"
         "memory"
-        "temperature"
         "pulseaudio"
         "backlight"
-        "clock"
         "custom/power"
         "tray"
       ];
 
-      "dwl/window" = {
-        format = "[{layout}]{title}";
-        on-click = "mango-screenshot";
+      "mango/window" = {
+        format = "{}";
+        icon-size = 20;
       };
-
-      "ext/workspaces" = {
-        format = "{icon}";
-        ignore-hidden = true;
-        on-click = "activate";
-        on-click-right = "deactivate";
-        on-scroll-up = "mmsg -d viewtoleft_have_client";
-        on-scroll-down = "mmsg -d viewtoright_have_client";
-        sort-by-id = true;
+      "mango/layout" = {
+        format = "{}";
+      };
+      "mango/workspaces" = {
+        format= "{icon}";
+        hide-empty= true;
+        on-click= "activate";
+        on-click-right= "toggle";
+        overview-label= "OVERVIEW";
       };
 
       "wlr/taskbar" = {
@@ -64,7 +64,7 @@
 
       network = {
         interval = 2;
-        format-wifi = "{essid} ({signalStrength}%) \\uf1eb";
+        format-wifi = "{essid} () \\uf1eb";
         format-ethernet = "󰈀 {ifname}";
         format-linked = "\\uf059 No IP ({ifname})";
         format-disconnected = "\\uf071 Disconnected";
