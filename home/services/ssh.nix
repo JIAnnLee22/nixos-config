@@ -8,7 +8,7 @@ let
 
   # ========== 在这里编辑 SSH 配置 ==========
   sshConfigContent = ''
-    # GitHub (使用 443 端口避免 daed/dae 代理问题)
+    # GitHub (使用 443 端口避免代理问题)
     Host github.com
       HostName ssh.github.com
       Port 443

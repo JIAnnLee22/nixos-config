@@ -1,7 +1,7 @@
 {
   description = "NixOS flake for jiannlee22";
   inputs = {
-    # `github:` uses api.github.com and hits anonymous rate limits on shared IPs (VPN/daed).
+    # `github:` uses api.github.com and hits anonymous rate limits on shared IPs (VPN/proxy).
     nixpkgs.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
     # master = unstable line; matches nixos-unstable (avoids github: API on flake update).
     home-manager = {
@@ -96,7 +96,6 @@
           # 系统服务
           ./modules/services/envfs.nix
           ./modules/services/ssh.nix
-          ./modules/services/daed.nix
           ./modules/services/clashtui.nix
 
           # Home Manager
