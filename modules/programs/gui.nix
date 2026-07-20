@@ -18,5 +18,8 @@
     vial
     android-studio
     android-tools
+    kitty
+    flameshot
+    simplescreenrecorder
   ];
 }
