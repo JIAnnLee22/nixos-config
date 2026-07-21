@@ -12,28 +12,14 @@
     opts.relativenumber = true;
     opts.ts = 2;
     opts.sw = 2;
+    opts.completeopt = [
+      "menuone"
+      "noselect"
+      "popup"
+    ];
     clipboard.providers = {
       wl-copy.enable = true;
       xsel.enable = true;
-    };
-    plugins.friendly-snippets.enable = true;
-    plugins.blink-cmp = {
-      enable = true;
-      setupLspCapabilities = true;
-      settings = {
-        keymap = {
-          preset = "default";
-          "<C-space>" = false;
-        };
-        sources.default = [
-          "lsp"
-          "path"
-          "snippets"
-          "buffer"
-        ];
-        completion.documentation.auto_show = true;
-        signature.enabled = true;
-      };
     };
 
     plugins.clangd-extensions = {
@@ -43,6 +29,13 @@
 
     plugins.lsp = {
       enable = true;
+      onAttach = ''
+        if client:supports_method("textDocument/completion") then
+          vim.lsp.completion.enable(true, client.id, bufnr, {
+            autotrigger = true,
+          })
+        end
+      '';
 
       keymaps = {
         silent = true;
