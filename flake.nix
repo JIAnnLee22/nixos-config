@@ -42,7 +42,8 @@
             allowSubstitutes = false;
           });
         })
-      ] ++ import ./modules/overlays;
+      ]
+      ++ import ./modules/overlays;
       pkgs = import nixpkgs {
         inherit system overlays;
       };

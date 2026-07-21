@@ -8,10 +8,34 @@
     colorscheme = "catppuccin";
     colorschemes.catppuccin.enable = true;
     opts.clipboard = "unnamedplus";
+    opts.number = true;
+    opts.relativenumber = true;
+    opts.ts = 2;
+    opts.sw = 2;
     clipboard.providers = {
       wl-copy.enable = true;
       xsel.enable = true;
     };
+    plugins.friendly-snippets.enable = true;
+    plugins.blink-cmp = {
+      enable = true;
+      setupLspCapabilities = true;
+      settings = {
+        keymap = {
+          preset = "default";
+          "<C-space>" = false;
+        };
+        sources.default = [
+          "lsp"
+          "path"
+          "snippets"
+          "buffer"
+        ];
+        completion.documentation.auto_show = true;
+        signature.enabled = true;
+      };
+    };
+
     plugins.clangd-extensions = {
       enable = true;
       enableOffsetEncodingWorkaround = true;
