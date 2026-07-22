@@ -20,6 +20,5 @@
     android-tools
     kitty
     flameshot
-    simplescreenrecorder
   ];
 }
