@@ -10,6 +10,7 @@
   imports = [
     # Shell 配置
     ./shell/env.nix
+    ./nix.nix
     ./shell/bash.nix
 
     # 桌面配置
