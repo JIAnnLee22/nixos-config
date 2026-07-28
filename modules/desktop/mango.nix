@@ -30,12 +30,12 @@ let
 in
 {
   # swaylock PAM is only auto-configured with programs.sway; Mango uses swaylock directly.
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
 
   programs.mango.enable = true;
 
   services.xserver.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
+  services.displayManager.ly.enable = true;
 
   services.displayManager.defaultSession = "mango";
 
