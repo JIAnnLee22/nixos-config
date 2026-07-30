@@ -3,7 +3,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    htop
+    btop
     wget
     git
     lazygit
