@@ -126,5 +126,20 @@
           ./modules/users.nix
         ];
       };
+
+      nixosConfigurations.qemu = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs home-manager; };
+        modules = [
+          ./host/qemu
+          ./modules/nix-settings.nix
+          ./modules/locale.nix
+          ./modules/networking.nix
+          home-manager.nixosModules.default
+          ./modules/home-manager.nix
+          ./modules/users.nix
+					./modules/desktop/xfce
+        ];
+      };
     };
 }
