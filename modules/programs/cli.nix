@@ -12,6 +12,7 @@
     zip
     unzip
     unrar
+		android-cli
   ];
   # clashtui 及 mihomo 后端在 modules/services/clashtui.nix 中统一配置
 
