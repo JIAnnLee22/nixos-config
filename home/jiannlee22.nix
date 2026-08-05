@@ -44,7 +44,5 @@
     ./yazi.nix
     ./nvim
 
-    # 代理工具
-    ./clashtui.nix
   ];
 }

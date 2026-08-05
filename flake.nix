@@ -4,7 +4,6 @@
     # `github:` uses api.github.com and hits anonymous rate limits on shared IPs (VPN/proxy).
     nixpkgs.url = "git+https://github.com/NixOS/nixpkgs.git?shallow=1&ref=nixos-unstable";
     # master = unstable line; matches nixos-unstable (avoids github: API on flake update).
-    chaotic.url = "git+https://github.com/chaotic-cx/nyx.git?shallow=1&ref=nyxpkgs-unstable";
     home-manager = {
       url = "git+https://github.com/nix-community/home-manager.git?shallow=1&ref=master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,7 +26,6 @@
     inputs@{
       self,
       nixpkgs,
-      chaotic,
       home-manager,
       mango,
       waybar,
@@ -72,7 +70,6 @@
         modules = [
           # Overlays
           { nixpkgs.overlays = overlays; }
-          chaotic.nixosModules.default
 
           # 主机配置（包括硬件和主机特定网络）
           ./host/ser
@@ -116,7 +113,6 @@
           # 系统服务
           ./modules/services/envfs.nix
           ./modules/services/ssh.nix
-          ./modules/services/clashtui.nix
 
           # Home Manager
           home-manager.nixosModules.default
@@ -138,7 +134,7 @@
           home-manager.nixosModules.default
           ./modules/home-manager.nix
           ./modules/users.nix
-					./modules/desktop/xfce
+          ./modules/desktop/xfce
         ];
       };
     };

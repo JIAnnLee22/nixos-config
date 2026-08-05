@@ -1,5 +1,5 @@
 # Boot loader 配置
-{ ... }:
+{ pkgs, ... }:
 
 {
   boot.loader = {

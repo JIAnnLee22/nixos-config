@@ -22,9 +22,6 @@
     windowrule=isfloating:1,width:1500,height:900,appid:yesplaymusic
     windowrule=animation_type_open:slide,appid:yesplaymusic
     windowrule=animation_type_close:slide,appid:yesplaymusic
-    windowrule=isfloating:1,appid:clash-verge
-    windowrule=width:1500,height:900,appid:clash-verge
-    windowrule=animation_type_open:slide,animation_type_close:slide,appid:clash-verge
     windowrule=isfloating:1,width:1500,height:900,appid:pot,title:Recognize
     windowrule=isfloating:1,appid:blueman-manager
     windowrule=width:1500,height:900,appid:blueman-manager

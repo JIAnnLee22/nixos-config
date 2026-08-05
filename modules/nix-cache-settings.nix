@@ -1,6 +1,5 @@
 {
   substituters = [
-    "https://nyx-cache.chaotic.cx/"
     "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
     "https://mirrors.ustc.edu.cn/nix-channels/store"
     "https://mirror.sjtu.edu.cn/nix-channels/store"
@@ -17,7 +16,6 @@
 
   # The Chinese mirrors above synchronize the official cache and reuse its key.
   trusted-public-keys = [
-    "nyx-cache.chaotic.cx:dJxTrgMC3V3cFfyIiBQDQorG6k1LsqurH/srpMSq7qk="
     "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
   ];
 }
