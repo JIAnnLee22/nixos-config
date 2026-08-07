@@ -18,6 +18,7 @@
     vial
     android-studio
     android-tools
+		scrcpy
     kitty
     flameshot
   ];
