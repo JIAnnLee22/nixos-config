@@ -13,6 +13,7 @@
     unzip
     unrar
     android-cli
+		zellij
   ];
 
   programs.bash.enable = true;
