@@ -99,6 +99,7 @@
           ./modules/programs/development.nix
           ./modules/programs/gui.nix
           ./modules/programs/nix-ld.nix
+          ./modules/programs/clash.nix
 
           # 硬件服务
           ./modules/audio.nix
@@ -135,6 +136,7 @@
           ./modules/home-manager.nix
           ./modules/users.nix
           ./modules/desktop/xfce
+          ./modules/programs/clash.nix
         ];
       };
     };
