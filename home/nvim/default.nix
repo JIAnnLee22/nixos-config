@@ -145,6 +145,48 @@
             };
           };
         };
+        vtsls = {
+          enable = true;
+
+          # 允许项目本地 node_modules 中的 TypeScript 覆盖 nix 包内版本。
+          packageFallback = true;
+
+          filetypes = [
+            "javascript"
+            "javascriptreact"
+            "javascript.jsx"
+            "typescript"
+            "typescriptreact"
+            "typescript.tsx"
+          ];
+
+          rootMarkers = [
+            "package.json"
+            "tsconfig.json"
+            "jsconfig.json"
+            ".git"
+          ];
+
+          # vtsls 包装 VS Code 的 TypeScript 扩展，settings 遵循 VS Code 风格。
+          settings = {
+            vtsls.autoUseWorkspaceTsdk = true;
+
+            typescript = {
+              suggest.completeFunctionCalls = true;
+              inlayHints = {
+                parameterNames.enabled = "all";
+                parameterTypes.enabled = true;
+                variableTypes.enabled = true;
+                propertyDeclarationTypes.enabled = true;
+                functionLikeReturnTypes.enabled = true;
+              };
+            };
+
+            javascript = {
+              suggest.completeFunctionCalls = true;
+            };
+          };
+        };
         rust_analyzer = {
           enable = true;
           package = pkgs.rust-analyzer;
