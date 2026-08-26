@@ -16,10 +16,6 @@
       url = "git+https://github.com/Alexays/Waybar.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      url = "git+https://github.com/nix-community/nixvim.git?shallow=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -29,7 +25,6 @@
       home-manager,
       mango,
       waybar,
-      nixvim,
       ...
     }:
     let
@@ -54,7 +49,6 @@
       homeConfigurations.jiannlee22 = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          nixvim.homeModules.nixvim
           ./home/jiannlee22.nix
           {
             home.packages = [

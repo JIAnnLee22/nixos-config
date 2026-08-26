@@ -1,3 +1,4 @@
 [submodule "dotfile"]
 	path = dotfile
 	url = git@github.com:JIAnnLee22/dotfile.git
+	branch = neovim-lite

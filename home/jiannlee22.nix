@@ -42,7 +42,6 @@
     ./waybar.nix
     ./mako.nix
     ./yazi.nix
-    ./nvim
-
+    ../modules/nvim
   ];
 }
