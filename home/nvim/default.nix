@@ -12,6 +12,7 @@
     opts.relativenumber = true;
     opts.ts = 2;
     opts.sw = 2;
+    opts.swapfile = false;
     opts.completeopt = [
       "menuone"
       "noselect"
