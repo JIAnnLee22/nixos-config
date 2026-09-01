@@ -78,6 +78,26 @@
         "url": "https://github.com/nix-community/home-manager.git"
       }
     },
+    "kotlin_lsp": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787824126,
+        "narHash": "sha256-GvmODfpOfwSyrj+DXh+HUx7rXedHl45TsyHonIwYN7I=",
+        "ref": "refs/heads/master",
+        "rev": "e79ae6631962b8abed8d02b4059ddb6e32b2903b",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/JIAnnLee22/kotlin_lsp.flake.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/JIAnnLee22/kotlin_lsp.flake.git"
+      }
+    },
     "mango": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -136,6 +156,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "kotlin_lsp": "kotlin_lsp",
         "mango": "mango",
         "nixpkgs": "nixpkgs",
         "waybar": "waybar"

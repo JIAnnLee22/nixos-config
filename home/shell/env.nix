@@ -3,6 +3,8 @@
 
 {
   home.sessionVariables = {
+    # 与系统默认 JDK 保持一致，避免 JAVA_HOME 仍指向旧版本。
+    JAVA_HOME = "${pkgs.jdk21}/lib/openjdk";
     EDITOR = "nvim";
     GOPATH = "${config.home.homeDirectory}/go";
     GOBIN = "${config.home.homeDirectory}/go/bin";

@@ -6,5 +6,6 @@
   home.file = {
     ".jdks/openjdk-11" = { source = "${pkgs.jdk11.home}"; };
     ".jdks/openjdk-17" = { source = "${pkgs.jdk17.home}"; };
+    ".jdks/openjdk-21" = { source = "${pkgs.jdk21.home}"; };
   };
 }

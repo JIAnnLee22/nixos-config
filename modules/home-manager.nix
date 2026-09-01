@@ -6,6 +6,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    extraSpecialArgs = { inherit inputs; };
     backupFileExtension = "backup";
     users.jiannlee22 = { pkgs, ... }: {
       imports = [ ../home/jiannlee22.nix ];

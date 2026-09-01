@@ -5,12 +5,9 @@
   # 系统默认 JDK
   programs.java = {
     enable = true;
-    package = pkgs.jdk17;
+    package = pkgs.jdk21;
   };
 
-  # 提供多个 JDK 版本供选择
-  environment.systemPackages = with pkgs; [
-    jdk11
-    jdk17
-  ];
+  # programs.java 会把默认 JDK 放入系统 PATH，避免多个 JDK 的 java 命令发生冲突。
+  # 其他版本通过 Home Manager 的 ~/.jdks 链接供 IDE 选择。
 }

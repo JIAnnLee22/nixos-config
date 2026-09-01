@@ -14,6 +14,7 @@
     unrar
     android-cli
 		zellij
+		ripgrep
   ];
 
   programs.bash.enable = true;

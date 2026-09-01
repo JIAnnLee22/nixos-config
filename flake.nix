@@ -16,6 +16,10 @@
       url = "git+https://github.com/Alexays/Waybar.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    kotlin_lsp = {
+      url = "git+ssh://git@github.com/JIAnnLee22/kotlin_lsp.flake.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -25,6 +29,7 @@
       home-manager,
       mango,
       waybar,
+      kotlin_lsp,
       ...
     }:
     let
@@ -48,6 +53,7 @@
       # (`-c` is --specialisation, not a config path.)
       homeConfigurations.jiannlee22 = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = { inherit inputs; };
         modules = [
           ./home/jiannlee22.nix
           {
@@ -68,6 +74,8 @@
           # 主机配置（包括硬件和主机特定网络）
           ./host/ser
           mango.nixosModules.mango
+
+          # kotlin_lsp is installed by the Home Manager LSP module below.
 
           # nixpkgs 全局配置
           ./modules/nixpkgs.nix
