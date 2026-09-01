@@ -19,7 +19,6 @@
 
     # 程序配置
     ./programs/jdks.nix
-    ./programs/wlogout.nix
     ./programs/swaylock.nix
     ./lsp-servers.nix
 
@@ -29,15 +28,9 @@
     # 输入法
     ./fcitx5-profile.nix
 
-    # Mango WM
-    ./mango/config.nix
-    ./mango/wallpaper.nix
-    ./mango/autostart.nix
-    ./mango/bindings.nix
-    ./mango/env.nix
-    ./mango/rule.nix
-
+    # mango wm
     ../modules/mangobar
+    ../modules/mango
 
     # 终端和状态栏
     ./foot.nix
