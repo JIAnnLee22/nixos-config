@@ -12,6 +12,10 @@
       url = "git+https://github.com/mangowm/mango.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mangobar = {
+      url = "git+https://github.com/mangowm/mangobar.git?shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     waybar = {
       url = "git+https://github.com/Alexays/Waybar.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,6 +32,7 @@
       nixpkgs,
       home-manager,
       mango,
+      mangobar,
       waybar,
       kotlin_lsp,
       ...

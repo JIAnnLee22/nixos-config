@@ -37,6 +37,8 @@
     ./mango/env.nix
     ./mango/rule.nix
 
+    ../modules/mangobar
+
     # 终端和状态栏
     ./foot.nix
     ./waybar.nix

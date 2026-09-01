@@ -121,6 +121,27 @@
         "url": "https://github.com/mangowm/mango.git"
       }
     },
+    "mangobar": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788081294,
+        "narHash": "sha256-5muimzaOqG/9MHohAlIPR8M/+5uL4Ot9AHBAStqCvTk=",
+        "ref": "refs/heads/main",
+        "rev": "7965fd2ac0a464a5e91298c9d0f400aea0422cd0",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/mangowm/mangobar.git"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/mangowm/mangobar.git"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1785318670,
@@ -158,6 +179,7 @@
         "home-manager": "home-manager",
         "kotlin_lsp": "kotlin_lsp",
         "mango": "mango",
+        "mangobar": "mangobar",
         "nixpkgs": "nixpkgs",
         "waybar": "waybar"
       }
