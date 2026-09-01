@@ -91,11 +91,11 @@
         "rev": "e79ae6631962b8abed8d02b4059ddb6e32b2903b",
         "revCount": 1,
         "type": "git",
-        "url": "ssh://git@github.com/JIAnnLee22/kotlin_lsp.flake.git"
+        "url": "https://github.com/JIAnnLee22/kotlin_lsp.flake.git"
       },
       "original": {
         "type": "git",
-        "url": "ssh://git@github.com/JIAnnLee22/kotlin_lsp.flake.git"
+        "url": "https://github.com/JIAnnLee22/kotlin_lsp.flake.git"
       }
     },
     "mango": {
@@ -107,10 +107,10 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1785238753,
-        "narHash": "sha256-5Ix3bmjxFztiRGQpl/5eeUkSH23KyvA2B1hSSy5EhG0=",
+        "lastModified": 1788238778,
+        "narHash": "sha256-BhA+TEkGryxU9hppp8UItTNBllZz09hX8pwMjtk1Jdo=",
         "ref": "refs/heads/main",
-        "rev": "9ce833bf5bc27eae0c6d554b09638a366916fe49",
+        "rev": "53d729c0476fc50534835dcdaf58ad314a32a34d",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/mangowm/mango.git"

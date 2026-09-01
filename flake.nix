@@ -17,7 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     kotlin_lsp = {
-      url = "git+ssh://git@github.com/JIAnnLee22/kotlin_lsp.flake.git";
+      url = "git+https://github.com/JIAnnLee22/kotlin_lsp.flake.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
