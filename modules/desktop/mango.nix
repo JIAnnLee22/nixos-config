@@ -24,6 +24,7 @@ let
       satty
       wl-clipboard
       config.programs.mango.package
+			swaybg
     ];
     text = builtins.readFile ./screenshot.sh;
   };
@@ -58,6 +59,7 @@ in
       cliphist
       wl-clipboard
       wl-clip-persist
+      swaybg # autostart.conf 中的壁纸进程，缺它则 exec-once 静默失败
     ])
     ++ [
       nixos-rebuild-latest-mango

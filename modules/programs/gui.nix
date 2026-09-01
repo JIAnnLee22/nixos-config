@@ -20,6 +20,5 @@
     android-tools
 		scrcpy
     kitty
-    flameshot
   ];
 }

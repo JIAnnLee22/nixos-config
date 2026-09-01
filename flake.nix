@@ -16,10 +16,6 @@
       url = "git+https://github.com/mangowm/mangobar.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    waybar = {
-      url = "git+https://github.com/Alexays/Waybar.git?shallow=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     kotlin_lsp = {
       url = "git+https://github.com/JIAnnLee22/kotlin_lsp.flake.git";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,22 +29,12 @@
       home-manager,
       mango,
       mangobar,
-      waybar,
       kotlin_lsp,
       ...
     }:
     let
       system = "x86_64-linux";
-      overlays = [
-        waybar.overlays.default
-        (_final: prev: {
-          waybar = prev.waybar.overrideAttrs (_old: {
-            preferLocalBuild = true;
-            allowSubstitutes = false;
-          });
-        })
-      ]
-      ++ import ./modules/overlays;
+      overlays = import ./modules/overlays;
       pkgs = import nixpkgs {
         inherit system overlays;
       };

@@ -1,14 +1,11 @@
-# swaylock 配置 - 使用壁纸作为锁屏背景
-{ config, ... }:
+# swaylock 配置 - 使用壁纸作为锁屏背景（与 swaybg 同一张，见 dotfile/mango/wallpaper.png）
+{ ... }:
 
-let
-  wallpaperPath = "${config.home.homeDirectory}/.local/share/wallpapers/a_flower_on_a_dark_background.png";
-in
 {
   programs.swaylock = {
     enable = true;
     settings = {
-      image = wallpaperPath;
+      image = "~/.config/mango/wallpaper.png";
       scaling = "fill";
       # 外观
       font = "Maple Mono NF CN";

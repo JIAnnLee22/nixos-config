@@ -32,9 +32,8 @@
     ../modules/mangobar
     ../modules/mango
 
-    # 终端和状态栏
+    # 终端和通知
     ./foot.nix
-    ./waybar.nix
     ./mako.nix
     ./yazi.nix
     ../modules/nvim
