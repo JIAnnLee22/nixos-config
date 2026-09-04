@@ -13,7 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mangobar = {
-      url = "git+https://github.com/JIAnnLee22/mangobar.git?shallow=1";
+      url = "git+https://github.com/mangowm/mangobar.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     kotlin_lsp = {

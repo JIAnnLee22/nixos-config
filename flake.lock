@@ -112,18 +112,18 @@
         ]
       },
       "locked": {
-        "lastModified": 1788487450,
-        "narHash": "sha256-GxykC5M2zLXTWyXpPPhtgPfY7bPWkB1EkELBoqAd2sA=",
+        "lastModified": 1788498965,
+        "narHash": "sha256-XXkq/6sqsdlfusMiaQfurFslfViEcBs8L9mRf3dtTZw=",
         "ref": "refs/heads/main",
-        "rev": "cb7c8004a5b4926c328b92bd0e105e1543593195",
+        "rev": "7d419573eb28de0944e859224d0c737d4bf3fd45",
         "shallow": true,
         "type": "git",
-        "url": "https://github.com/JIAnnLee22/mangobar.git"
+        "url": "https://github.com/mangowm/mangobar.git"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "https://github.com/JIAnnLee22/mangobar.git"
+        "url": "https://github.com/mangowm/mangobar.git"
       }
     },
     "nixpkgs": {
