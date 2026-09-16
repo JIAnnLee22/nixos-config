@@ -6,15 +6,22 @@ let
   pi = pkgs."pi-coding-agent";
   node = pkgs.nodejs_24;
   piConfigDir = "${dotfile}/pi";
+  piConfigLink = "${config.xdg.configHome}/pi";
 in
 {
   home.packages = [ pi ];
 
   # Put the store-backed executable before legacy npm-global binaries in PATH.
   home.sessionPath = [ "${pi}/bin" ];
-  home.sessionVariables.PI_PACKAGE_DIR = "${config.xdg.configHome}/pi/npm";
+  # Pi 0.85.1 reads its agent configuration from PI_CODING_AGENT_DIR. Keep this
+  # pointed at the XDG link below, whose real target is the dotfile submodule.
+  home.sessionVariables = {
+    PI_CODING_AGENT_DIR = piConfigLink;
+    PI_PACKAGE_DIR = "${piConfigLink}/npm";
+  };
 
   # Keep the editable, version-controlled Pi configuration outside the Nix store.
+  # The resulting ~/.config/pi link resolves to ~/nixos-config/dotfile/pi.
   xdg.configFile."pi" = {
     source = config.lib.file.mkOutOfStoreSymlink piConfigDir;
     force = true;
@@ -24,7 +31,7 @@ in
   # first Home Manager activation, without managing auth.json or session data.
   home.activation.installPiExtensions = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     export PATH="${node}/bin:$PATH"
-    export PI_CODING_AGENT_DIR=${lib.escapeShellArg "${config.xdg.configHome}/pi"}
+    export PI_CODING_AGENT_DIR=${lib.escapeShellArg piConfigLink}
     export PI_PACKAGE_DIR="$PI_CODING_AGENT_DIR/npm"
 
     if [ ! -f "$PI_CODING_AGENT_DIR/settings.json" ]; then
