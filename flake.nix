@@ -161,6 +161,7 @@
           ./modules/bluetooth.nix
 
           ./modules/programs/fcitx5.nix
+          ./modules/programs/remote-controller.nix
 
           # 桌面环境
           ./modules/desktop/common.nix
