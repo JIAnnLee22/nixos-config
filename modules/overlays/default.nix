@@ -1,4 +1,5 @@
 # Overlays 汇总
 [
   (import ./bun.nix)
+  (import ./pi.nix)
 ]
