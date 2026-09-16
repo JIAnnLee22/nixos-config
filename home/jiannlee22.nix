@@ -19,6 +19,7 @@
 
     # 程序配置
     ./programs/jdks.nix
+    ./programs/pi.nix
     ./programs/swaylock.nix
     ./lsp-servers.nix
 
