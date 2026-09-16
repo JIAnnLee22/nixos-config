@@ -9,7 +9,7 @@
     GOPATH = "${config.home.homeDirectory}/go";
     GOBIN = "${config.home.homeDirectory}/go/bin";
     OBSFILE_ROOT = "${config.home.homeDirectory}/obs";
-    PI_CODING_AGENT_SESSION_DIR = "${config.xdg.dataHome}/pi/sessions";
+    PI_CODING_AGENT_SESSION_DIR = "${config.home.homeDirectory}/.pi/agent/sessions";
     NPM_CONFIG_PREFIX = "${config.home.homeDirectory}/.npm-global";
     BUN_INSTALL = "${config.home.homeDirectory}/.bun";
     # 图形化 sudo 密码输入
