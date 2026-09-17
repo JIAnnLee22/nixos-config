@@ -158,13 +158,66 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1789546076,
+        "narHash": "sha256-zVxLZiSnmaaPLwnhj7pwmqe3axBg/C6nG5JZsJMh2g4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b1b875982b17dabde9b4a37f3e229e74913e6db3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1789426278,
+        "narHash": "sha256-GnotcvKtbTMnoVx6G4E7ZdUX6487Dky74dqq3pU7iRk=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "efe6f071ede9d21c37462d2d6682d5e670099684",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "qq": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1789616388,
+        "narHash": "sha256-iYsVUEU/+uQMS23VFjoLUSGFQIVE3cll1Uu76+Jej5I=",
+        "ref": "refs/tags/v3.2.32-52194",
+        "rev": "0a0c675c8a5453e9f7dc711fafa71cac52caa0c1",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/JIAnnLee22/qq-nix.git"
+      },
+      "original": {
+        "ref": "refs/tags/v3.2.32-52194",
+        "type": "git",
+        "url": "ssh://git@github.com/JIAnnLee22/qq-nix.git"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "kotlin_lsp": "kotlin_lsp",
         "mango": "mango",
         "mangobar": "mangobar",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "qq": "qq",
+        "wechat": "wechat"
       }
     },
     "scenefx": {
@@ -203,6 +256,25 @@
         "owner": "nix-systems",
         "repo": "default-linux",
         "type": "github"
+      }
+    },
+    "wechat": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1789615210,
+        "narHash": "sha256-P+bo4WfVagbDmygPPVe36LV+paRRW6GrQUz7dYb5qZw=",
+        "ref": "refs/tags/v4.1.13.9",
+        "rev": "b03c46b118396b412f50ca9d23f1ff7dabe465ca",
+        "revCount": 6,
+        "type": "git",
+        "url": "ssh://git@github.com/JIAnnLee22/wechat-nix.git"
+      },
+      "original": {
+        "ref": "refs/tags/v4.1.13.9",
+        "type": "git",
+        "url": "ssh://git@github.com/JIAnnLee22/wechat-nix.git"
       }
     }
   },

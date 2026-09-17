@@ -1,2 +1,9 @@
 # Nix build 结果
 result
+
+# Nix binary cache 私钥，严禁提交
+*-priv-key.pem
+
+# 独立开发仓库；系统配置通过远端 flake tag 引用
+/qq-nix/
+/wechat-nix/

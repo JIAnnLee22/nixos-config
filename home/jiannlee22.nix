@@ -1,11 +1,16 @@
 # Home Manager 主配置 - jiannlee22 用户
 # 具体功能已拆分到各子模块
-{ ... }:
+{ inputs, pkgs, ... }:
 
 {
   home.username = "jiannlee22";
   home.homeDirectory = "/home/jiannlee22";
   home.stateVersion = "25.11";
+
+  # 微信由独立 wechat-nix flake 提供；发布后由 root flake.lock 固定版本。
+  home.packages = [
+    inputs.wechat.packages.${pkgs.system}.default
+  ];
 
   imports = [
     # Shell 配置

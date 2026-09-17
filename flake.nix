@@ -20,6 +20,15 @@
       url = "git+https://github.com/JIAnnLee22/kotlin_lsp.flake.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # 独立仓库的 tag 会被 root flake.lock 固定，避免配置中到处查版本。
+    wechat = {
+      url = "git+ssh://git@github.com/JIAnnLee22/wechat-nix.git?ref=refs/tags/v4.1.13.9";
+      # 不 follows root nixpkgs：Release closure 必须对应 wechat-nix 自己锁定的 nixpkgs。
+    };
+    qq = {
+      url = "git+ssh://git@github.com/JIAnnLee22/qq-nix.git?ref=refs/tags/v3.2.32-52194";
+      # 保留 qq-nix 自己锁定的 nixpkgs，以使用已验证的 FHS runtime closure。
+    };
   };
 
   outputs =

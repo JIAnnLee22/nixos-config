@@ -1,11 +1,11 @@
 # GUI 应用程序
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
     google-chrome
-    wechat
-    qq
+    inputs.wechat.packages.${pkgs.system}.default
+    inputs.qq.packages.${pkgs.system}.default
     feishu
     mpv
     pcmanfm
@@ -16,9 +16,10 @@
     # 图形化 askpass 程序
     x11_ssh_askpass
     vial
-    android-studio-full
+    # android-studio-full
     android-tools
 		scrcpy
     kitty
+    motrix
   ];
 }
