@@ -7,6 +7,6 @@
 
   users.users.jiannlee22 = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "kvm" "adbusers" "uinput" "plugdev" ];
+    extraGroups = [ "wheel" "kvm" "uinput" "plugdev" "disk" ];
   };
 }
