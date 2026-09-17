@@ -2,15 +2,32 @@
 # 具体功能已拆分到各子模块
 { inputs, pkgs, ... }:
 
+let
+  system = pkgs.stdenv.hostPlatform.system;
+  wechat = inputs.wechat.packages.${system}.default;
+  wechatWayland = pkgs.symlinkJoin {
+    name = "${wechat.name}-wayland-ime";
+    paths = [ wechat ];
+    nativeBuildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram "$out/bin/wechat" \
+        --set QT_QPA_PLATFORM wayland \
+        --set QT_IM_MODULE text-input-unstable-v3
+
+      # 使用包装器的绝对路径，避免桌面启动时命中其他 profile 中的同名程序。
+      rm "$out/share/applications/wechat.desktop"
+      substitute "${wechat}/share/applications/wechat.desktop" \
+        "$out/share/applications/wechat.desktop" \
+        --replace-fail "Exec=wechat %U" "Exec=$out/bin/wechat %U"
+    '';
+  };
+in
 {
   home.username = "jiannlee22";
   home.homeDirectory = "/home/jiannlee22";
   home.stateVersion = "25.11";
 
-  # 微信由独立 wechat-nix flake 提供；发布后由 root flake.lock 固定版本。
-  home.packages = [
-    inputs.wechat.packages.${pkgs.system}.default
-  ];
+  home.packages = [ wechatWayland ];
 
   imports = [
     # Shell 配置

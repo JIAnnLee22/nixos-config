@@ -27,13 +27,33 @@ let
         --set STUDIO_VM_OPTIONS ${androidStudioVmOptions}
     '';
   };
+
+  feishu = pkgs.feishu;
+  feishuWayland = pkgs.symlinkJoin {
+    name = "${feishu.name}-wayland-ime";
+    paths = [ feishu ];
+    nativeBuildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram "$out/opt/bytedance/feishu/bytedance-feishu" \
+        --add-flags "--ozone-platform=wayland" \
+        --add-flags "--enable-wayland-ime" \
+        --add-flags "--wayland-text-input-version=3"
+
+      # 上游 desktop 使用绝对 store 路径，必须改为包装后的启动器。
+      rm "$out/share/applications/bytedance-feishu.desktop"
+      substitute "${feishu}/share/applications/bytedance-feishu.desktop" \
+        "$out/share/applications/bytedance-feishu.desktop" \
+        --replace-fail \
+          "Exec=${feishu}/opt/bytedance/feishu/bytedance-feishu %U" \
+          "Exec=$out/opt/bytedance/feishu/bytedance-feishu %U"
+    '';
+  };
 in
 {
   environment.systemPackages = with pkgs; [
     google-chrome
-    inputs.wechat.packages.${pkgs.system}.default
     inputs.qq.packages.${pkgs.system}.default
-    feishu
+    feishuWayland
     mpv
     pcmanfm
     foot
