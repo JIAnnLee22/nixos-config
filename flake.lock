@@ -47,10 +47,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1787680808,
-        "narHash": "sha256-9168tNt0NZdtlx5RM5huEuc9NCWMLACJA9O4UK/l2Zc=",
+        "lastModified": 1789618856,
+        "narHash": "sha256-OSqj7eOijvCZfN7owFWRxLWRhej5lZI+Kt82q3INLvc=",
         "ref": "master",
-        "rev": "6840c9a8f50722944eb106ce8bb237c138584f2a",
+        "rev": "afa6821c70560bb19d1a8c577bff398f7f239869",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/nix-community/home-manager.git"
@@ -91,10 +91,10 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1788490924,
-        "narHash": "sha256-tymTjjNKWohVzXycg2mN7cSApQ6NDmn9k4LklNq/WGo=",
+        "lastModified": 1789623773,
+        "narHash": "sha256-TlICv9NBNJ/NmsLw92nUCGFqCZlEgLDIvOtJmqI1i38=",
         "ref": "refs/heads/main",
-        "rev": "7b4266f1d8df09f83283574ba61dba51656d4791",
+        "rev": "9f73660c593bc34c07924fb7182013dc43cf6513",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/mangowm/mango.git"
@@ -112,10 +112,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1788498965,
-        "narHash": "sha256-XXkq/6sqsdlfusMiaQfurFslfViEcBs8L9mRf3dtTZw=",
+        "lastModified": 1789539144,
+        "narHash": "sha256-ot38vZg59h24Cv1OYRzF9ktEr115wm+5umCAycsNShA=",
         "ref": "refs/heads/main",
-        "rev": "7d419573eb28de0944e859224d0c737d4bf3fd45",
+        "rev": "84f25a77706c31b49b865d08bc5429ca61115971",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/mangowm/mangobar.git"
@@ -128,10 +128,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1785318670,
-        "narHash": "sha256-dN6Ou5x/+23FZLEpYP3IffO+NyJFzUlGumt1uu3MMaY=",
+        "lastModified": 1789546076,
+        "narHash": "sha256-zVxLZiSnmaaPLwnhj7pwmqe3axBg/C6nG5JZsJMh2g4=",
         "ref": "nixos-unstable",
-        "rev": "0954f7ee2f6bb3dc7d4e3d0d8bcb8fd4bde4cfc5",
+        "rev": "b1b875982b17dabde9b4a37f3e229e74913e6db3",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"

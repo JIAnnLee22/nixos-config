@@ -1,5 +1,2 @@
-# Overlays 汇总
-[
-  (import ./bun.nix)
-  (import ./pi.nix)
-]
+# 当前无需额外覆盖 nixpkgs 软件包。
+[ ]
