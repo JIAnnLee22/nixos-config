@@ -48,7 +48,7 @@ in
     PreferTextIcon=False
     ShowLayoutNameInIcon=True
     UseInputMethodLanguageToDisplayText=True
-    Theme=catppuccin-latte-mauve
+    Theme=catppuccin-mocha-mauve
     DarkTheme=catppuccin-mocha-mauve
     UseDarkTheme=True
     UseAccentColor=False
