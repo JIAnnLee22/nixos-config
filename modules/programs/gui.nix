@@ -13,6 +13,7 @@ let
     includeNDK = true;
     includeCmake = true;
   };
+  androidSdkRoot = "${androidSdk.androidsdk}/libexec/android-sdk";
   androidStudioWithSdk = pkgs.android-studio.withSdk androidSdk.androidsdk;
   androidStudioVmOptions = pkgs.writeText "android-studio.vmoptions" ''
     # SDK 由 Nix 完整提供；禁止首次启动向导再次尝试下载并写入只读的 Nix Store。
@@ -50,6 +51,12 @@ let
   };
 in
 {
+  # 让 Gradle、Neovim 等命令行工具复用 Android Studio 的声明式 SDK。
+  environment.sessionVariables = {
+    ANDROID_HOME = androidSdkRoot;
+    ANDROID_SDK_ROOT = androidSdkRoot;
+  };
+
   environment.systemPackages = with pkgs; [
     google-chrome
     inputs.qq.packages.${pkgs.system}.default
@@ -63,9 +70,12 @@ in
     x11_ssh_askpass
     vial
     androidStudio
+    # 暴露 adb、fastboot 等 platform-tools 命令。
+    androidSdk.platform-tools
     scrcpy
     kitty
     motrix
     zenity
+    flameshot
   ];
 }
