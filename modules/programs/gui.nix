@@ -67,5 +67,6 @@ in
     scrcpy
     kitty
     motrix
+    zenity
   ];
 }
