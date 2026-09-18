@@ -16,7 +16,7 @@ let
   androidStudioWithSdk = pkgs.android-studio.withSdk androidSdk.androidsdk;
   androidStudioVmOptions = pkgs.writeText "android-studio.vmoptions" ''
     # SDK 由 Nix 完整提供；禁止首次启动向导再次尝试下载并写入只读的 Nix Store。
-    -Dintellij.startup.wizard=false
+    -Ddisable.android.first.run=true
   '';
   androidStudio = pkgs.symlinkJoin {
     name = "android-studio-with-sdk-${pkgs.android-studio.version}";
@@ -56,7 +56,6 @@ in
     feishuWayland
     mpv
     pcmanfm
-    foot
     freerdp
     remmina
     qemu_kvm

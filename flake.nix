@@ -102,6 +102,7 @@
           ./modules/programs/gui.nix
           ./modules/programs/nix-ld.nix
           ./modules/programs/clash.nix
+          ./modules/programs/foot.nix
 
           # 硬件服务
           ./modules/audio.nix

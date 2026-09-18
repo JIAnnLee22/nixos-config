@@ -41,6 +41,7 @@ in
 
     # 程序配置
     ./programs/jdks.nix
+    ./programs/android-studio.nix
     ./programs/pi.nix
     ./programs/swaylock.nix
     ./lsp-servers.nix
@@ -56,7 +57,6 @@ in
     ../modules/mango
 
     # 终端和通知
-    ./foot.nix
     ./mako.nix
     ./yazi.nix
     ../modules/nvim
