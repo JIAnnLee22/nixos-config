@@ -195,16 +195,16 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1789616388,
-        "narHash": "sha256-iYsVUEU/+uQMS23VFjoLUSGFQIVE3cll1Uu76+Jej5I=",
-        "ref": "refs/tags/v3.2.32-52194",
-        "rev": "0a0c675c8a5453e9f7dc711fafa71cac52caa0c1",
-        "revCount": 1,
+        "lastModified": 1789722693,
+        "narHash": "sha256-ypuKLFotpikXfnO6LspTRaJsoDXba/VDCD7XzqT355A=",
+        "ref": "refs/tags/v3.2.33-52892",
+        "rev": "422bb2f312b21d52a4dc6bcd92b0f2425c91da2d",
+        "revCount": 2,
         "type": "git",
         "url": "ssh://git@github.com/JIAnnLee22/qq-nix.git"
       },
       "original": {
-        "ref": "refs/tags/v3.2.32-52194",
+        "ref": "refs/tags/v3.2.33-52892",
         "type": "git",
         "url": "ssh://git@github.com/JIAnnLee22/qq-nix.git"
       }
