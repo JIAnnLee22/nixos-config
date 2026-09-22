@@ -7,7 +7,7 @@
 		enableBashIntegration = true;
 		settings = {
 		  main = {
-			  font = "monospace:size=14";
+			  font = "Maple Mono NL NF CN:size=14";
 			};
 		  colors-light = {
 				alpha = "0.25";

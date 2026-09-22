@@ -11,7 +11,7 @@
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
       fira-code
-      maple-mono.NF-CN
+      maple-mono.NL-NF-CN
     ];
 
     fontconfig = {
@@ -37,7 +37,7 @@
           "Noto Serif CJK SC"
         ];
         monospace = [
-          "Maple Mono NF CN"
+          "Maple Mono NL NF CN"
           "Fira Code"
         ];
         emoji = [ "Noto Color Emoji" ];

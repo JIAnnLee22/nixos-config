@@ -8,7 +8,7 @@
       image = "~/.config/mango/wallpaper.png";
       scaling = "fill";
       # 外观
-      font = "Maple Mono NF CN";
+      font = "Maple Mono NL NF CN";
       font-size = 24;
       color = "201b14ff";
       inside-color = "201b14ff";
