@@ -18,8 +18,6 @@ let
   androidStudioVmOptions = pkgs.writeText "android-studio.vmoptions" ''
     # SDK 由 Nix 完整提供；禁止首次启动向导再次尝试下载并写入只读的 Nix Store。
     -Ddisable.android.first.run=true
-    # 当前 JBR 的原生 Wayland 弹窗在 Mango 多屏布局下错位；XToolkit 已实测正常。
-    -Dawt.toolkit.name=XToolkit
   '';
   androidStudio = pkgs.symlinkJoin {
     name = "android-studio-with-sdk-${pkgs.android-studio.version}";
