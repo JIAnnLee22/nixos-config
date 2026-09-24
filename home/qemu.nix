@@ -8,7 +8,7 @@
   };
 
   imports = [
-    ./nvim
+    ../modules/nvim
   ];
 
   programs.git.enable = true;
