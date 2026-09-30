@@ -44,6 +44,7 @@ in
     ./programs/android-studio.nix
     ./programs/pi.nix
     ./programs/swaylock.nix
+    ./programs/emacs.nix
     ./lsp-servers.nix
 
     # 服务
