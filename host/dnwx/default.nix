@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ./networking.nix
+    ../../modules/nvidia.nix
   ];
 
   networking.hostName = "dnwx";
