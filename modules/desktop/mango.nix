@@ -1,5 +1,10 @@
 # Mango WM 桌面环境配置
-{ config, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 
 let
   user = config.users.users.jiannlee22;
@@ -24,14 +29,19 @@ let
       satty
       wl-clipboard
       config.programs.mango.package
-			swaybg
+      swaybg
     ];
     text = builtins.readFile ./screenshot.sh;
   };
 in
 {
+  imports = [ inputs.mango.nixosModules.mango ];
+
+  i18n.inputMethod.fcitx5.waylandFrontend = true;
+
   # swaylock PAM is only auto-configured with programs.sway; Mango uses swaylock directly.
   security.pam.services.swaylock = { };
+  security.pam.services.greetd.enableGnomeKeyring = true;
 
   # 上游 mango NixOS 模块已自带：xdg.portal（wlr/gtk）、xwayland、polkit、登录会话条目，
   # 无需在此重复配置；greetd 基于 tty 启动 Wayland 会话，也不依赖 services.xserver。
@@ -41,6 +51,7 @@ in
   # （default_session）。参考 https://mangowm.github.io/docs/installation#nixos Option A。
   services.greetd = {
     enable = true;
+    useTextGreeter = true;
     settings = {
       initial_session = {
         command = "mango";

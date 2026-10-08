@@ -1,5 +1,26 @@
 {
   "nodes": {
+    "dwm": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791427363,
+        "narHash": "sha256-sMy1TeszFmjXKddhGY0SZU3vY+hXVgCmasImM4tQz3A=",
+        "ref": "master",
+        "rev": "a8b4ffc08551c81ef3176774646fa64bb50e3cba",
+        "revCount": 1811,
+        "type": "git",
+        "url": "ssh://git@github.com/JIAnnLee22/dwm.git"
+      },
+      "original": {
+        "ref": "master",
+        "type": "git",
+        "url": "ssh://git@github.com/JIAnnLee22/dwm.git"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -91,15 +112,16 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1790145079,
-        "narHash": "sha256-jG+pGEL2tjRpBmdsHMeUoGhjfzix1Xyhk6psP6iXJDw=",
-        "ref": "refs/heads/main",
-        "rev": "fa9a08779896ca67bded9a12ca585c8517e78af4",
+        "lastModified": 1790898883,
+        "narHash": "sha256-azXPZ57eVc5ZpUTjc4ZZwDRb5ZnZ4DQsPmzUS3YHXtk=",
+        "ref": "refs/tags/0.17.5",
+        "rev": "cd84cc2822024f22e3c39ea8952d4b7e238c62b6",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/mangowm/mango.git"
       },
       "original": {
+        "ref": "refs/tags/0.17.5",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/mangowm/mango.git"
@@ -114,13 +136,14 @@
       "locked": {
         "lastModified": 1789539144,
         "narHash": "sha256-ot38vZg59h24Cv1OYRzF9ktEr115wm+5umCAycsNShA=",
-        "ref": "refs/heads/main",
+        "ref": "refs/tags/0.2.2",
         "rev": "84f25a77706c31b49b865d08bc5429ca61115971",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/mangowm/mangobar.git"
       },
       "original": {
+        "ref": "refs/tags/0.2.2",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/mangowm/mangobar.git"
@@ -211,6 +234,7 @@
     },
     "root": {
       "inputs": {
+        "dwm": "dwm",
         "home-manager": "home-manager",
         "kotlin_lsp": "kotlin_lsp",
         "mango": "mango",

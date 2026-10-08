@@ -4,8 +4,6 @@
 {
   # 为 Android Studio 等 JetBrains 应用提供持久化的 Secret Service。
   services.gnome.gnome-keyring.enable = true;
-  # Mango 通过 greetd 登录；把 keyring 接入实际使用的 PAM 服务。
-  security.pam.services.greetd.enableGnomeKeyring = true;
 
   # 图形化 sudo 密码输入支持
   security.sudo.extraConfig = ''

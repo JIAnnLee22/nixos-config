@@ -1,8 +1,17 @@
 # Home Manager 主配置 - jiannlee22 用户
 # 具体功能已拆分到各子模块
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  lib,
+  osConfig ? null,
+  pkgs,
+  ...
+}:
 
 let
+  # 独立 Home Manager 保留 Mango 默认值；NixOS 中跟随实际引用的桌面模块。
+  mangoEnabled = osConfig == null || (osConfig.programs.mango.enable or false);
+  dwmEnabled = osConfig != null && osConfig.services.xserver.windowManager.dwm.enable;
   system = pkgs.stdenv.hostPlatform.system;
   wechat = inputs.wechat.packages.${system}.default;
   wechatWayland = pkgs.symlinkJoin {
@@ -27,7 +36,7 @@ in
   home.homeDirectory = "/home/jiannlee22";
   home.stateVersion = "25.11";
 
-  home.packages = [ wechatWayland ];
+  home.packages = [ (if mangoEnabled then wechatWayland else wechat) ];
 
   imports = [
     # Shell 配置
@@ -43,7 +52,6 @@ in
     ./programs/jdks.nix
     ./programs/android-studio.nix
     ./programs/pi.nix
-    ./programs/swaylock.nix
     ./programs/emacs.nix
     ./lsp-servers.nix
 
@@ -53,13 +61,15 @@ in
     # 输入法
     ./fcitx5-profile.nix
 
-    # mango wm
-    ../modules/mangobar
-    ../modules/mango
-
-    # 终端和通知
-    ./mako.nix
+    # 终端
     ./yazi.nix
     ../modules/nvim
-  ];
+  ]
+  ++ lib.optionals mangoEnabled [
+    ../modules/mangobar
+    ../modules/mango
+    ./programs/swaylock.nix
+    ./mako.nix
+  ]
+  ++ lib.optional dwmEnabled ../modules/dwm;
 }

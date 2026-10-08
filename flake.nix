@@ -9,11 +9,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mango = {
-      url = "git+https://github.com/mangowm/mango.git?shallow=1";
+      url = "git+https://github.com/mangowm/mango.git?shallow=1&ref=refs/tags/0.17.5";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dwm = {
+      url = "git+ssh://git@github.com/JIAnnLee22/dwm.git?ref=master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mangobar = {
-      url = "git+https://github.com/mangowm/mangobar.git?shallow=1";
+      url = "git+https://github.com/mangowm/mangobar.git?shallow=1&ref=refs/tags/0.2.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     kotlin_lsp = {
@@ -53,7 +57,11 @@
       # (`-c` is --specialisation, not a config path.)
       homeConfigurations.jiannlee22 = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = {
+          inherit inputs;
+          # imports 的条件不能依赖 _module.args；独立 HM 没有 NixOS osConfig。
+          osConfig = null;
+        };
         modules = [
           ./home/jiannlee22.nix
           {
@@ -73,7 +81,6 @@
 
           # 主机配置（包括硬件和主机特定网络）
           ./host/dnwx
-          mango.nixosModules.mango
 
           # kotlin_lsp is installed by the Home Manager LSP module below.
 
@@ -110,7 +117,7 @@
 
           ./modules/programs/fcitx5.nix
 
-          # 桌面环境
+          # 桌面环境：mango.nix / dwm.nix 二选一，只需替换下一条桌面引用。
           ./modules/desktop/common.nix
           ./modules/desktop/mango.nix
 
@@ -136,7 +143,6 @@
 
           # 主机配置（包括硬件和主机特定网络）
           ./host/ser
-          mango.nixosModules.mango
 
           # kotlin_lsp is installed by the Home Manager LSP module below.
 
@@ -173,7 +179,7 @@
           ./modules/programs/fcitx5.nix
           ./modules/programs/remote-controller.nix
 
-          # 桌面环境
+          # 桌面环境：mango.nix / dwm.nix 二选一，只需替换下一条桌面引用。
           ./modules/desktop/common.nix
           ./modules/desktop/mango.nix
 

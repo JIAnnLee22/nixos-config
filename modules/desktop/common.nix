@@ -9,8 +9,7 @@
     enable = true;
     type = "fcitx5";
     fcitx5 = {
-      # Hyprland / Wayland：避免 GTK_IM_MODULE 等告警，并与官方 Wayland 说明一致。
-      waylandFrontend = true;
+      # 默认使用 X11 前端；Mango 模块单独启用 Wayland 前端。
       addons = with pkgs; [
         qt6Packages.fcitx5-chinese-addons
         fcitx5-gtk

@@ -1,11 +1,24 @@
 # GUI 应用程序
-{ pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 let
   androidSdk = pkgs.androidenv.composeAndroidPackages {
     # Android 开发所需的平台 SDK；仅使用真机，不打包模拟器、镜像或 SDK 源码。
-    platformVersions = [ "34" "35" "36" ];
-    buildToolsVersions = [ "34.0.0""35.0.0" "36.0.0" ];
+    platformVersions = [
+      "34"
+      "35"
+      "36"
+    ];
+    buildToolsVersions = [
+      "34.0.0"
+      "35.0.0"
+      "36.0.0"
+    ];
     includeEmulator = false;
     includeSystemImages = false;
     includeSources = false;
@@ -60,7 +73,7 @@ in
   environment.systemPackages = with pkgs; [
     google-chrome
     inputs.qq.packages.${pkgs.system}.default
-    feishuWayland
+    (if config.programs.mango.enable or false then feishuWayland else feishu)
     mpv
     pcmanfm
     freerdp
