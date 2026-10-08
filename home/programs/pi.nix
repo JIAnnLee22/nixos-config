@@ -20,6 +20,10 @@ in
     source = config.lib.file.mkOutOfStoreSymlink piConfigDir;
     force = true;
   };
+  home.file.".pi/subagent.json" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfigDir}/subagent.json";
+    force = true;
+  };
 
   # Pi extensions are user-state by design. Install the pinned extension set on
   # first activation without asking pi to rewrite the symlinked settings file.
