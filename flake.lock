@@ -166,6 +166,22 @@
         "url": "https://github.com/NixOS/nixpkgs.git"
       }
     },
+    "nixpkgs-darwin-x64": {
+      "locked": {
+        "lastModified": 1788334797,
+        "narHash": "sha256-nskSa8kDimM7F0VFSP8IdoSNo4G0vKzOtxwvOFpoGDI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "c19db427a1fdfc7591c0b0baeb4665dcef2c61da",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-26.05-darwin",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1782614948,
@@ -213,6 +229,29 @@
         "type": "github"
       }
     },
+    "pi": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-darwin-x64": "nixpkgs-darwin-x64"
+      },
+      "locked": {
+        "lastModified": 1791408813,
+        "narHash": "sha256-9R6Do6RAnNKQPYCfJY1dPIuYf55331f0QwH25dWg6eA=",
+        "ref": "refs/tags/v1.1.0",
+        "rev": "abe508e1b89912adde45528136c3221eb69acdd7",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/earendil-works/pi.git"
+      },
+      "original": {
+        "ref": "refs/tags/v1.1.0",
+        "shallow": true,
+        "type": "git",
+        "url": "https://github.com/earendil-works/pi.git"
+      }
+    },
     "qq": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
@@ -240,6 +279,7 @@
         "mango": "mango",
         "mangobar": "mangobar",
         "nixpkgs": "nixpkgs",
+        "pi": "pi",
         "qq": "qq",
         "wechat": "wechat"
       }

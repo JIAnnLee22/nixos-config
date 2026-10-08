@@ -33,6 +33,10 @@
       url = "git+ssh://git@github.com/JIAnnLee22/qq-nix.git?ref=refs/tags/v3.2.33-52892";
       # 保留 qq-nix 自己锁定的 nixpkgs，以使用已验证的 FHS runtime closure。
     };
+    pi = {
+      url = "git+https://github.com/earendil-works/pi.git?shallow=1&ref=refs/tags/v1.1.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -47,7 +51,7 @@
     }:
     let
       system = "x86_64-linux";
-      overlays = import ./modules/overlays;
+      overlays = import ./modules/overlays { inherit inputs; };
       pkgs = import nixpkgs {
         inherit system overlays;
       };
