@@ -28,13 +28,24 @@
     # 启用 nvidia-settings 控制面板
     nvidiaSettings = true;
 
+    # 启用驱动常驻模式，防止驱动反复休眠与重置上下文
+    nvidiaPersistenced = true;
+
     # 选择驱动版本（稳定版）
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+
+  # 禁用 Turing 架构上的 GSP 固件，由主机驱动传统模式调节频率，解决 300MHz 锁频卡顿
+  boot.extraModprobeConfig = ''
+    options nvidia NVreg_EnableGpuFirmware=0
+  '';
 
   # Wayland 与硬件视频解码环境变量
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "nvidia";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    GBM_BACKEND = "nvidia-drm";
+    # 避免硬件光标在合成器丢帧或异步提交时产生微卡顿
+    WLR_NO_HARDWARE_CURSORS = "1";
   };
 }
