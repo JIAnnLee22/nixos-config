@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mango = {
-      url = "git+https://github.com/mangowm/mango.git?shallow=1&ref=refs/tags/0.17.5";
+      url = "git+https://github.com/mangowm/mango.git?shallow=1&ref=refs/tags/0.18.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dwm = {
