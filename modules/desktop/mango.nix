@@ -53,12 +53,12 @@ in
     enable = true;
     useTextGreeter = true;
     settings = {
-      initial_session = {
-        command = "mango";
-        user = "${user.name}";
-      };
+      # initial_session = {
+      #   command = "mango";
+      #   user = "${user.name}";
+      # };
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --cmd mango";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd mango";
         user = "greeter";
       };
     };
