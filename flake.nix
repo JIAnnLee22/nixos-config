@@ -30,7 +30,7 @@
       # 不 follows root nixpkgs：Release closure 必须对应 wechat-nix 自己锁定的 nixpkgs。
     };
     qq = {
-      url = "git+ssh://git@github.com/JIAnnLee22/qq-nix.git?ref=refs/tags/v3.2.33-52892";
+      url = "git+ssh://git@github.com/JIAnnLee22/qq-nix.git?ref=refs/tags/v3.2.34-53644";
       # 保留 qq-nix 自己锁定的 nixpkgs，以使用已验证的 FHS runtime closure。
     };
     pi = {
