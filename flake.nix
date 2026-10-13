@@ -128,6 +128,7 @@
           # 系统服务
           ./modules/services/envfs.nix
           ./modules/services/ssh.nix
+          ./modules/services/smb.nix
 
           # Home Manager
           home-manager.nixosModules.default
@@ -190,6 +191,7 @@
           # 系统服务
           ./modules/services/envfs.nix
           ./modules/services/ssh.nix
+          ./modules/services/smb.nix
 
           # Home Manager
           home-manager.nixosModules.default
