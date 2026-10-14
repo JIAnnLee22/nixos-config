@@ -252,17 +252,15 @@
       "locked": {
         "lastModified": 1791887822,
         "narHash": "sha256-scfm9HpRUhWRdXYx5v1lf7N76qZYP1FXrC935BdGDEA=",
-        "ref": "master",
+        "ref": "refs/heads/master",
         "rev": "3061f443a1edcdf6ca0f05d8bc98a06875c6bd18",
-        "shallow": true,
+        "revCount": 9,
         "type": "git",
-        "url": "ssh://git@github.com/JIAnnLee22/onmyoji.flake.git"
+        "url": "https://github.com/JIAnnLee22/onmyoji.flake.git"
       },
       "original": {
-        "ref": "master",
-        "shallow": true,
         "type": "git",
-        "url": "ssh://git@github.com/JIAnnLee22/onmyoji.flake.git"
+        "url": "https://github.com/JIAnnLee22/onmyoji.flake.git"
       }
     },
     "pi": {

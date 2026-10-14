@@ -33,6 +33,10 @@
       url = "git+ssh://git@github.com/JIAnnLee22/qq-nix.git?ref=refs/tags/v3.2.34-53644";
       # 保留 qq-nix 自己锁定的 nixpkgs，以使用已验证的 FHS runtime closure。
     };
+    onmyoji = {
+      url = "git+https://github.com/JIAnnLee22/onmyoji.flake.git";
+      # 保留 onmyoji 锁定的 nixpkgs，确保 Wine 与游戏运行环境闭包一致。
+    };
     pi = {
       url = "git+https://github.com/earendil-works/pi.git?shallow=1&ref=refs/tags/v1.1.0";
       inputs.nixpkgs.follows = "nixpkgs";

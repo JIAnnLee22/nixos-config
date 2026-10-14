@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ./networking.nix
     ../../modules/nvidia.nix
+    ../../modules/game
   ];
 
   networking.hostName = "dnwx";
