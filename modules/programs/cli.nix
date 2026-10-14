@@ -14,6 +14,7 @@
     unrar
     zellij
     ripgrep
+		libnotify
   ];
 
   programs.bash.enable = true;
