@@ -27,14 +27,15 @@
         lcdfilter = "default";
       };
       defaultFonts = {
+        # CJK 字体统一承担中西文排版，西文字体仅作后备或供应用显式选择。
         sansSerif = [
+          "Noto Sans CJK SC"
           "Inter"
           "Noto Sans"
-          "Noto Sans CJK SC"
         ];
         serif = [
-          "Noto Serif"
           "Noto Serif CJK SC"
+          "Noto Serif"
         ];
         monospace = [
           "Maple Mono NL NF CN"
