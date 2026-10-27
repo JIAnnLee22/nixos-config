@@ -1,7 +1,10 @@
 # ~/.config/fcitx5/profile 会覆盖 NixOS 的 /etc/xdg/fcitx5/profile，因此把分组写在这里。
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 let
   ini = pkgs.formats.ini { };
+  fcitx5File =
+    path:
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/dotfile/fcitx5/${path}";
   catppuccinTheme = pkgs.catppuccin-fcitx5.override { withRoundedCorners = true; };
   # tiger/tigress 的输入法描述使用 fcitx-tiger；上游没有提供这个图标。
   tigerIcon = pkgs.writeText "fcitx-tiger.svg" ''
@@ -54,6 +57,15 @@ in
     UseAccentColor=False
     PerScreenDPI=True
   '';
+
+  # 逐文件链接，保留 table/ 中的用户词库、历史以及现有 profile 和选词设置。
+  # 使用 Nix store 外链接，避免依赖 flake 是否包含 dotfile 子模块。
+  xdg.dataFile."fcitx5/table/flypy.dict".source = fcitx5File "table/flypy.dict";
+  xdg.dataFile."fcitx5/table/tiger.main.dict".source = fcitx5File "table/tiger.main.dict";
+  xdg.dataFile."fcitx5/table/tigress.main.dict".source = fcitx5File "table/tigress.main.dict";
+  xdg.dataFile."fcitx5/inputmethod/flypy.conf".source = fcitx5File "inputmethod/flypy.conf";
+  xdg.dataFile."fcitx5/inputmethod/tiger.conf".source = fcitx5File "inputmethod/tiger.conf";
+  xdg.dataFile."fcitx5/inputmethod/tigress.conf".source = fcitx5File "inputmethod/tigress.conf";
 
   # 安装 Catppuccin 的四种官方风味；统一使用 Mauve 强调色和上游圆角资源。
   xdg.dataFile."fcitx5/themes/catppuccin-latte-mauve".source =
